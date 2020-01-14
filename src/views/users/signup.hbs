@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card card bg-custom-1 border-dark rounded text-center shadow-lg animated bounceInLeft">
+      <div class="card-header sombratexto font-weight-bold">
+        <h3>Registro</h3> 
+      </div>
+      <img class="rounded-circle mx-auto d-block logo m-4" src="/img/huella.png" alt="Logo">
+      <div class="card-body ">
+        <form action="/users/signup" method="POST">
+           <!--Nombre-->
+            <div class="form-group shadow-lg">
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{nombre}}">
+            </div>
+              <!--Apellido-->
+            <div class="form-group shadow-lg">
+                <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="{{apellido}}">
+            </div>
+              <!--Calle-->
+            <div class="form-group shadow-lg">
+                <input type="text" class="form-control" name="calle" placeholder="Calle" value="{{calle}}">
+            </div>
+            <!--Telefono-->
+            <div class="form-group shadow-lg">
+                <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlf" placeholder="(+36) Tlf" value="{{tlf}}">
+            </div>
+              <!--Email-->
+            <div class="form-group shadow-lg">
+                <input type="email"  class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" value="{{email}}">
+            </div>
+              <!--Password-->
+            <div class="form-group shadow-lg">
+                <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{password}}">
+            </div>
+              <!--RepPassword-->
+            <div class="form-group shadow-lg">
+                <input type="password" class="form-control" name="confirm_password" placeholder="Repetir Contraseña" value="{{confirm_password}}">
+            </div>
+          <button class="btn btn-success negro font-weight-bold btn-block shadow-lg">
+            Registrarse
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

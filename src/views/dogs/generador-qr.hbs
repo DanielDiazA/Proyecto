@@ -1,0 +1,68 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{text}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/each}}
+<head>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            function generateBarCode()
+            {
+                var nric = $('#text').val();
+                var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
+                $('#barcode').attr('src', url);
+            }
+        </script>
+    </head>
+<div class="col-md-4 mx-auto">
+  <div class="card bg-custom-1 border-dark rounded text-center animated bounceInLeft">
+    <div class="card-header sombratexto font-weight-bold">
+      <h3>Generador QR</h3>
+    </div>
+        <div class="card-body shadow-lg  ">
+              <!-- Imagen QR-->
+              <img id='barcode' class = "animated bounceInLeft"alt="" title="QR" width="150" height="150"/>
+            
+      <form action="/dogs/generador-qr/{{dog._id}}?_method=PUT" method="POST">
+        <!--<input type="hidden" name="_method" value="PUT">-->
+          <!--Esconder todos los atributos-->
+                <div class="form-group shadow-lg">
+                     <input type="text" style="display: none;" name="nombreperro" class="form-control" placeholder="Nombre del Perro" value="{{dog.nombreperro}} ">
+                </div>
+                 <div class="form-group shadow-lg">
+                     <input type="text"style="display: none;"  name="raza" class="form-control" placeholder="Raza" value="{{dog.raza}}">
+                </div>
+                <div class="form-group shadow-lg">
+                    <input type="number" style="display: none;" name="edadperro" class="form-control" placeholder="Edad del Perro"min="1" max="20"value="{{dog.edadperro}}">
+                </div>
+                <div class="form-group shadow-lg">
+                     <textarea name="descripcion" style="display: none;" class="form-control">{{dog.descripcion}}</textarea>
+                </div>
+                <div class="form-group shadow-lg">
+                    <input type="tel" pattern="[0-9]{9}" style="display: none;" class="form-control" name="tlfd" placeholder="(+36) Tlf Dueño" value="{{dog.tlfd}}">
+                </div>
+                <div class="form-group shadow-lg">
+                  <input type="tel" pattern="[0-9]{9}" style="display: none;" class="form-control" name="tlfc" placeholder="(+36) Tlf Clinica" value="{{dog.tlfc}}">
+                </div>
+          <!----->
+                  <div class="form-group shadow-lg">
+                    
+                    <button class="btn btn-success negro font-weight-bold btn-block shadow-lg" id="text" value="Nombre del perro: {{dog.nombreperro}}/ Raza de perro: {{dog.raza}}/ Nombre dueño: {{user.nombre}}/ 
+                    Calle: {{user.calle}}/ Tel: {{dog.tlfd}}/ TelClinica: {{dog.tlfc}}/ Mail: {{user.email}} " type="button" onclick='generateBarCode();'>
+                      Generar QR
+                    </button>
+                  </div>  
+          <!----->
+              <div class="form-group">
+              <button class="btn btn-danger negro font-weight-bold btn-block shadow-lg" type="submit">
+                    Volver
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

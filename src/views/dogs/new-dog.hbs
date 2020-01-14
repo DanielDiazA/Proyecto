@@ -1,0 +1,36 @@
+<div class="col-md-4 mx-auto">
+  <div class="card bg-custom-1 border-dark rounded text-center">
+    <div class="card-header sombratexto font-weight-bold">
+      <h3>Nuevo Perro</h3>
+    </div>
+    <div class="card-body  shadow-lg mb-10">
+      <!--Donde enviamos los datos del formulario-->
+      <form action="/dogs/new-dog" method="POST">
+        <div class="form-group shadow-lg">
+            <input type="text" name="nombreperro" class="form-control" placeholder="Nombre del Perro" autofocus>
+        </div>
+        <div class="form-group shadow-lg">
+            <input type="text" name="raza" class="form-control" placeholder="Raza">
+        </div>
+        <div class="form-group shadow-lg">
+            <input type="number" name="edadperro" class="form-control" placeholder="Edad del Perro"min="1" max="20">
+        </div>
+        <div class="form-group shadow-lg">
+            <textarea name="descripcion" class="form-control"placeholder="Descripción"></textarea>
+        </div>
+        <div class="form-group shadow-lg">
+            <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfd" placeholder="(+36) Tlf Dueño">
+        </div>
+        <div class="form-group shadow-lg">
+          <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfc" placeholder="(+36) Tlf Clinica">
+        </div>
+        <div class="form-group shadow-lg">
+          <button class="btn btn-success negro font-weight-bold btn-block shadow-lg" type="submit">
+            Guardar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

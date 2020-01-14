@@ -1,0 +1,40 @@
+<div class= container>
+  <div class="row" >
+    {{#each dogs}}<!--Recorremos todos los perros-->
+    <div class="col-md-6 p-3 " >
+      <div class="card  bg-custom-1 border-dark rounded shadow-lg mb-5 animated bounceInUp">
+        <div class="card-body  font-weight-bold  ">
+          <h4 class="card-title d-flex justify-content-between align-items-center font-weight-bold">
+            {{nombreperro}} <a href="/dogs/edit/{{_id}}"><i class="fa fa-paw"></i></a>
+          </h4>
+          <p>Raza: {{raza}}</p>
+          <p>Edad: {{edadperro}}</p>
+          <p>Desc:  {{descripcion}}</p>
+          <p>Tlf.Dueño: {{tlfd}}</p>
+          <p>Tlf.Clinica: {{tlfc}}</p>
+          <hr>
+
+          <!-- GenerarQR-->
+            <form action="/dogs/qr/{{_id}}" method="GET">
+            <button type="submit" class="btn btn-success negro font-weight-bold  btn-block btn-sm animated bounceInUp">Generar QR</button></form>
+          <hr>
+
+            <!-- Eliminar Perro -->
+          <form action="/dogs/delete/{{_id}}?_method=DELETE" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-danger negro font-weight-bold btn-block btn-sm animated bounceInUp">Eliminar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    {{else}}<!--En caso de que no haya un perro creado-->
+    <div class="card mx-auto bg-custom-1 border-dark rounded text-center animated bounceInLeft">
+      <div class="card-body shadow-lg">
+        <h1>Bienvenido {{user.nombre}}</h1>
+        <p clsss="lead">Todavia no hay perros registrados</p>
+        <a href="/dogs/add" class="btn btn-success btn-block shadow-lg shadow-lg negro">Crear Perfil Perro</a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
