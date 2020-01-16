@@ -68,4 +68,9 @@ p {
   font-size: 40px;
 
  }
+
+ .barcode{
+   border: 1px;
+  display:none;
+ }
   
