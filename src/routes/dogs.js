@@ -55,7 +55,7 @@ router.post('/dogs/new-dog', isAuthenticated, async (req, res) => {
     newDog.called=req.user.called;
     newGog.tlfd=req.user.tlfd;*/
     await newDog.save();
-    req.flash('success_msg', 'Dog Added Successfully');
+    req.flash('success_msg', 'Perfil de perro creado');
     res.redirect('/dogs');
   }
 });
@@ -70,7 +70,7 @@ router.get('/dogs', isAuthenticated, async (req, res) => {
 router.get('/dogs/edit/:id', isAuthenticated, async (req, res) => {
   const dog = await Dog.findById(req.params.id);
   if(dog.user != req.user.id) {
-    req.flash('error_msg', 'Not Authorized');
+    req.flash('error_msg', 'No Autorizado');
     return res.redirect('/dogs');
   } 
   res.render('dogs/edit-dog', { dog });
@@ -79,7 +79,7 @@ router.get('/dogs/edit/:id', isAuthenticated, async (req, res) => {
 router.put('/dogs/edit-dog/:id', isAuthenticated, async (req, res) => {
   const {nombreperro,raza,edadperro,descripcion,tlfd,tlfc } = req.body;
   await Dog.findByIdAndUpdate(req.params.id, {nombreperro,raza,edadperro,descripcion,tlfd,tlfc});
-  req.flash('success_msg', 'Dog Updated Successfully');
+  req.flash('success_msg', 'Perfil de perro actualizado correctamente');
   res.redirect('/dogs');
 });
 
@@ -88,7 +88,7 @@ router.put('/dogs/edit-dog/:id', isAuthenticated, async (req, res) => {
 router.get('/dogs/qr/:id', isAuthenticated, async (req, res) => {
   const dog = await Dog.findById(req.params.id);
   if(dog.user != req.user.id) {
-    req.flash('error_msg', 'Not Authorized');
+    req.flash('error_msg', 'No autorizado');
     return res.redirect('/dogs');
   } 
   res.render('dogs/generador-qr', { dog });
@@ -106,7 +106,7 @@ router.put('/dogs/generador-qr/:id', isAuthenticated, async (req, res) => {
 // Delete Dogs
 router.delete('/dogs/delete/:id', isAuthenticated, async (req, res) => {
   await Dog.findByIdAndDelete(req.params.id);
-  req.flash('success_msg', 'Dog Deleted Successfully');
+  req.flash('success_msg', 'Perfil de perro eliminado correctamente');
   res.redirect('/dogs');
 });
 

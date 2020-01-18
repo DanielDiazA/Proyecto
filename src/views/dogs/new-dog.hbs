@@ -1,6 +1,6 @@
 <div class="col-md-4 mx-auto">
-  <div class="card bg-custom-1 border-dark rounded text-center">
-    <div class="card-header sombratexto font-weight-bold">
+  <div class="card bg-custom-1 border-dark rounded text-center animated bounceInLeft boxshadow">
+    <div class="card-header sombratexto font-weight-bold ">
       <h3>Nuevo Perro</h3>
     </div>
     <div class="card-body  shadow-lg mb-10">
@@ -11,29 +11,29 @@
         </div>
         <div class="form-group shadow-lg">
             <select id="inputState" class="form-control" placeholder="Raza" name="raza">
-              <option selected>Beagle</option>
-              <option>Bichon Maltes</option>
+              <option>Beagle</option>
+              <option>BichonMaltes</option>
               <option>Boxer</option>
               <option>Bulldog</option>
-              <option>Bulldog Frances</option>
+              <option>BulldogFrances</option>
               <option>Caniche</option>
               <option>Carlino</option>
               <option>Chihuahua</option>
-              <option>Chow Chow</option>
+              <option>ChowChow</option>
               <option>Doberman</option>
-              <option>Golden Retriever</option>
-              <option>Husky Siberiano</option>
-              <option>Labrador Retriever</option>
+              <option>GoldenRetriever</option>
+              <option>HuskySiberiano</option>
+              <option>LabradorRetriever</option>
               <option>Mastin</option>
-              <option>Pastor Aleman</option>
-              <option>Pastor Vasco</option>
-              <option>Pit Bull</option>
+              <option>PastorAleman</option>
+              <option>PastorVasco</option>
+              <option>PitBull</option>
               <option>Pomeriana</option>
               <option>Pug</option> 
               <option>Rottweiler</option> 
               <option>Sanbernardo</option>
-              <option>Shiba Inu</option> 
-              <option>Shih Tzu</option>
+              <option>ShibaInu</option> 
+              <option>ShihTzu</option>
               <option>Yorkshire</option>
             </select>
         </div>
@@ -44,13 +44,13 @@
             <textarea name="descripcion" class="form-control"placeholder="Descripción"></textarea>
         </div>
         <div class="form-group shadow-lg">
-            <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfd" placeholder="(+36) Tlf Dueño">
+            <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfd" placeholder="(+36) Tlf Dueño" value="{{user.tlf}}">
         </div>
         <div class="form-group shadow-lg">
           <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfc" placeholder="(+36) Tlf Clinica">
         </div>
         <div class="form-group shadow-lg">
-          <button class="btn btn-success negro font-weight-bold btn-block shadow-lg" type="submit">
+          <button class="btn btn-success negro font-weight-bold btn-block buttonshadow" type="submit">
             Guardar
           </button>
         </div>

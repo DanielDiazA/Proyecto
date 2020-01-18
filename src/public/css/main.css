@@ -5,17 +5,13 @@ body {
 }
 
 
-
-
-
-
 .logo {
   width: 30%;
 }
 
 .fa-paw {
   color: rgb(87, 192, 66);
-  text-shadow: 0 0 3px #000;
+  text-shadow: 0 0 4px #000;
 }
 
 .fondo{
@@ -98,4 +94,22 @@ p {
 }
 .h5{
   font-weight: bold;
+}
+
+.foto{
+  width: 70%;
+  border: 1px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  box-shadow: 5px 5px 5px grey;
+}
+
+.boxshadow
+{
+  box-shadow: 10px 10px 5px grey;
+}
+
+.buttonshadow
+{
+  box-shadow: 5px 5px 5px grey;
 }

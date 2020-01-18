@@ -69,7 +69,7 @@ router.post('/users/signin', passport.authenticate('local', {
 //Deslogeo
 router.get('/users/logout', (req, res) => {
   req.logout();
-  req.flash('success_msg', 'You are logged out now.');
+  req.flash('success_msg', 'Has salido de la aplicación');
   res.redirect('/users/signin');
 });
 
