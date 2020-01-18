@@ -6,15 +6,37 @@
   </button>
 </div>
 {{/each}}
+<style>
+
+
+
+</style>
 <head>
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script type="text/javascript">
             function generateBarCode()
             {   
-                document.getElementById("barcode").style.display="inline";
+                document.getElementById("barcode").style.display="inline"; //Visualizar 
+                var v=" ";
+                if (document.getElementById("raza").checked === true){
+                  v=v+$('#raza').val();
+                }
+                if (document.getElementById("telep").checked === true){
+                  v=v+$('#telep').val();
+                }
+                if (document.getElementById("telec").checked === true){
+                  v=v+$('#telec').val();
+                }
+                if (document.getElementById("calle").checked === true){
+                  v=v+$('#calle').val();
+                }
+                if (document.getElementById("mail").checked === true){
+                  v=v+$('#mail').val();
+                }
+                val=$('#text').val() +v;
                 var nric = $('#text').val();
-                var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
+                var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + val + '&amp;size=50x50';
                 $('#barcode').attr('src', url);
                 
             }
@@ -51,15 +73,63 @@
                 <div class="form-group shadow-lg">
                   <input type="tel" pattern="[0-9]{9}" style="display: none;" class="form-control" name="tlfc" placeholder="(+36) Tlf Clinica" value="{{dog.tlfc}}">
                 </div>
-          <!----->
-                  <div class="form-group shadow-lg">
-                    
-                    <button class="btn btn-success negro font-weight-bold btn-block shadow-lg" id="text" value="Nombre del perro: {{dog.nombreperro}}/ Raza de perro: {{dog.raza}}/ Nombre dueño: {{user.nombre}}/ 
-                    Calle: {{user.calle}}/ Tel: {{dog.tlfd}}/ TelClinica: {{dog.tlfc}}/ Mail: {{user.email}} " type="button" onclick='generateBarCode();'>
+
+
+
+              <!-- Checkboxes-->
+              
+              <div class="card bg-custom-1 border-0 p-4">
+
+                <div class="h5">
+                  <h5>Selecciona datos extra</h5>
+                </div>
+                
+                <div class="container d-flex">
+                  <div class=" custom-control custom-switch   p-2">
+                    <input class=" custom-control-input" type="checkbox" id="raza" value= " »Raza : {{dog.raza}}">
+                    <label class=" custom-control-label letras" for="raza">Raza del Perro</label>
+                  </div>
+                </div>
+
+                <div class="container d-flex">
+                  <div class="custom-control custom-switch  p-2">
+                    <input class="custom-control-input" type="checkbox" id="telep" value= " »Tel : {{dog.tlfd}}">
+                    <label class="custom-control-label letras" for="telep">Telefono Dueño</label>
+                  </div>
+                </div>
+
+                <div class="container d-flex">
+                  <div class="custom-control custom-switch p-2">
+                    <input class="custom-control-input" type="checkbox" id="telec" value= " »TelClinica : {{dog.tlfc}}">
+                    <label class="custom-control-label letras" for="telec">Telefono Clinica</label>
+                  </div>
+                </div>
+
+                <div class="container d-flex">
+                  <div class="custom-control custom-switch p-2">
+                    <input class="custom-control-input" type="checkbox" id="calle" value= " »Calle : {{user.calle}}">
+                    <label class="custom-control-label letras" for="calle"> Calle</label>
+                  </div>
+                </div>
+
+                <div class="container d-flex">
+                  <div class="custom-control custom-switch  p-2">
+                    <input class="custom-control-input" type="checkbox" id="mail" value= " »Email : {{user.email}}">
+                    <label class="custom-control-label letras" for="mail">Email</label>
+                  </div>
+                </div>
+              </div>
+               
+                <!----->
+                  <div class="form-group shadow-lg ">
+                    <button class="btn btn-dark letras font-weight-bold btn-block shadow-lg" id="text" value="»Nombre del perro: {{dog.nombreperro}} »Nombre dueño: {{user.nombre}}" type="button" onclick='generateBarCode();'>
                       Generar QR
                     </button>
                   </div>  
           <!----->
+                
+
+
               <div class="form-group">
               <button class="btn btn-danger negro font-weight-bold btn-block shadow-lg" type="submit">
                     Volver

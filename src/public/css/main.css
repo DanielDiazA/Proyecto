@@ -4,6 +4,11 @@ body {
   background: linear-gradient(to right, rgb(231,165,110), rgb(210,231,131)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+
+
+
+
+
 .logo {
   width: 30%;
 }
@@ -69,8 +74,28 @@ p {
 
  }
 
- .barcode{
-   border: 1px;
+.barcode {
+  border: 1px;
   display:none;
- }
   
+ }
+ .animated .fadeIn .barcode{
+  filter: invert(33%);
+  filter: sepia(68%);
+  filter: saturate(6908%);
+  filter: hue-rotate(350deg);
+  filter: brightness(92%);
+  filter: contrast(137%);
+ }
+
+.letras
+{
+  font-size: 15px;
+}
+
+.izquierda{
+  width: 50%;
+}
+.h5{
+  font-weight: bold;
+}
