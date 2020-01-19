@@ -6,13 +6,8 @@
   </button>
 </div>
 {{/each}}
-<style>
 
-
-
-</style>
-<head>
-        
+<head> 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script type="text/javascript">
             function generateBarCode()
@@ -36,22 +31,24 @@
                 }
                 val=$('#text').val() +v;
                 var nric = $('#text').val();
-                var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + val + '&amp;size=50x50';
+                var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + val + '&amp;size=50x50.png';
                 $('#barcode').attr('src', url);
+                $('#barcode').attr('href', url);
                 
             }
             
         </script>
     </head>
 <div class="col-md-4 mx-auto">
-  <div class="card bg-custom-1 border-dark rounded text-center animated bounceInLeft boxshadow">
+  <div class="card bg-custom-1 border-dark rounded text-center animated bounceInLeft boxshadow" >
     <div class="card-header sombratexto font-weight-bold">
       <h3>Generador QR</h3>
     </div>
         <div class="card-body shadow-lg  ">
               <!-- Imagen QR-->
-              <img id='barcode' class = "animated fadeIn barcode "alt="" title="QR" width="150" height="150"/>
-            
+              
+              <img id='barcode' download="QR" href="" class = "animated fadeIn buttonshadow barcode " alt="" title="QR" width="200" height="200"/>
+             
       <form action="/dogs/generador-qr/{{dog._id}}?_method=PUT" method="POST">
         <!--<input type="hidden" name="_method" value="PUT">-->
           <!--Esconder todos los atributos-->
@@ -125,9 +122,7 @@
                     </button>
                   </div>  
           <!----->
-                
-
-
+             
               <div class="form-group">
               <button class="btn btn-danger negro font-weight-bold btn-block buttonshadow" type="submit">
                     Volver
