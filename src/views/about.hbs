@@ -2,60 +2,62 @@
   <div class="card-body shadow-lg">
     <h1>¿Qué es NeverLostDog?</h1>
     <p>
-      NeverLostDog es una aplicación con la que podrás crear diferentes perfiles para tus mascotas para posteriormente generar códigos QR. Podras modificar los diferentes perfiles o eliminarlos. No hay número maximo de perfiles ni de códigos a generar.
+      NeverLostDog es una aplicación con la que podrás crear diferentes perfiles para tus mascotas para posteriormente
+      generar códigos QR. Podras modificar los diferentes perfiles o eliminarlos. No hay número maximo de perfiles ni de
+      códigos a generar.
     </p>
   </div>
 </section>
 
 <div class="swiper-container p-5 col-md-5 zoomIn">
-        <div class="swiper-wrapper mx-auto ">
-          <div class="swiper-slide" >
-              <div class="imgBx">
-                
-                    <img src="/img/Img1.jpg">
-                    
-              </div>
-            <div class="details">
-                <h3>Códigos QR personalizables</h3>
-            </div>
-          </div>
-          <div class="swiper-slide" >
-            <div class="imgBx">
-                  <img src="/img/Img2.jpg">
-            </div>
-          <div class="details">
-              <h3>Crea Perfiles para tus Perros!!</h3>
-          </div>
-        </div>
-        <div class="swiper-slide" >
-            <div class="imgBx">
-                  <img src="/img/Img3.jpg">
-            </div>
-          <div class="details">
-              <h3>Registrate GRATIS!</h3>
-          </div>
-        </div>
-        </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+  <div class="swiper-wrapper mx-auto ">
+    <div class="swiper-slide">
+      <div class="imgBx">
+
+        <img src="/img/Img1.jpg">
+
       </div>
-      
-    <script type="text/javascript" src="/css/swiper.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-          effect: 'coverflow',
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: 'auto',
-          coverflowEffect: {
-            rotate: 25,
-            stretch: 0,
-            depth: 600,
-            modifier: 2,
-            slideShadows : true,
-          },
-          pagination: {
-            el: '.swiper-pagination',
-          },
-        });
-      </script>
+      <div class="details">
+        <h3>Códigos QR personalizables</h3>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="imgBx">
+        <img src="/img/Img2.jpg">
+      </div>
+      <div class="details">
+        <h3>Crea Perfiles para tus Perros!!</h3>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="imgBx">
+        <img src="/img/Img3.jpg">
+      </div>
+      <div class="details">
+        <h3>Registrate GRATIS!</h3>
+      </div>
+    </div>
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<script type="text/javascript" src="/css/swiper.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 25,
+      stretch: 0,
+      depth: 600,
+      modifier: 2,
+      slideShadows: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+</script>

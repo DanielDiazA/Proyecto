@@ -7,44 +7,45 @@
       <!--Donde enviamos los datos del formulario-->
       <form action="/dogs/new-dog" method="POST">
         <div class="form-group shadow-lg">
-            <input type="text" name="nombreperro" class="form-control" placeholder="Nombre del Perro" autofocus>
+          <input type="text" name="nombreperro" class="form-control" placeholder="Nombre del Perro" autofocus>
         </div>
         <div class="form-group shadow-lg">
-            <select id="inputState" class="form-control" placeholder="Raza" name="raza">
-              <option>Beagle</option>
-              <option>BichonMaltes</option>
-              <option>Boxer</option>
-              <option>Bulldog</option>
-              <option>BulldogFrances</option>
-              <option>Caniche</option>
-              <option>Carlino</option>
-              <option>Chihuahua</option>
-              <option>ChowChow</option>
-              <option>Doberman</option>
-              <option>GoldenRetriever</option>
-              <option>HuskySiberiano</option>
-              <option>LabradorRetriever</option>
-              <option>Mastin</option>
-              <option>PastorAleman</option>
-              <option>PastorVasco</option>
-              <option>PitBull</option>
-              <option>Pomeriana</option>
-              <option>Pug</option> 
-              <option>Rottweiler</option> 
-              <option>Sanbernardo</option>
-              <option>ShibaInu</option> 
-              <option>ShihTzu</option>
-              <option>Yorkshire</option>
-            </select>
+          <select id="inputState" class="form-control" placeholder="Raza" name="raza">
+            <option>Beagle</option>
+            <option>BichonMaltes</option>
+            <option>Boxer</option>
+            <option>Bulldog</option>
+            <option>BulldogFrances</option>
+            <option>Caniche</option>
+            <option>Carlino</option>
+            <option>Chihuahua</option>
+            <option>ChowChow</option>
+            <option>Doberman</option>
+            <option>GoldenRetriever</option>
+            <option>HuskySiberiano</option>
+            <option>LabradorRetriever</option>
+            <option>Mastin</option>
+            <option>PastorAleman</option>
+            <option>PastorVasco</option>
+            <option>PitBull</option>
+            <option>Pomeriana</option>
+            <option>Pug</option>
+            <option>Rottweiler</option>
+            <option>Sanbernardo</option>
+            <option>ShibaInu</option>
+            <option>ShihTzu</option>
+            <option>Yorkshire</option>
+          </select>
         </div>
         <div class="form-group shadow-lg">
-            <input type="number" name="edadperro" class="form-control" placeholder="Edad del Perro"min="1" max="20">
+          <input type="number" name="edadperro" class="form-control" placeholder="Edad del Perro" min="1" max="20">
         </div>
         <div class="form-group shadow-lg">
-            <textarea name="descripcion" class="form-control"placeholder="Descripción"></textarea>
+          <textarea name="descripcion" class="form-control" placeholder="Descripción"></textarea>
         </div>
         <div class="form-group shadow-lg">
-            <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfd" placeholder="(+36) Tlf Dueño" value="{{user.tlf}}">
+          <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfd" placeholder="(+36) Tlf Dueño"
+            value="{{user.tlf}}">
         </div>
         <div class="form-group shadow-lg">
           <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfc" placeholder="(+36) Tlf Clinica">
@@ -58,4 +59,3 @@
     </div>
   </div>
 </div>
-

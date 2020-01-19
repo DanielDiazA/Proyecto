@@ -7,125 +7,132 @@
 </div>
 {{/each}}
 
-<head> 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script type="text/javascript">
-            function generateBarCode()
-            {   
-                document.getElementById("barcode").style.display="inline"; //Visualizar 
-                var v=" ";
-                if (document.getElementById("raza").checked === true){
-                  v=v+$('#raza').val();
-                }
-                if (document.getElementById("telep").checked === true){
-                  v=v+$('#telep').val();
-                }
-                if (document.getElementById("telec").checked === true){
-                  v=v+$('#telec').val();
-                }
-                if (document.getElementById("calle").checked === true){
-                  v=v+$('#calle').val();
-                }
-                if (document.getElementById("mail").checked === true){
-                  v=v+$('#mail').val();
-                }
-                val=$('#text').val() +v;
-                var nric = $('#text').val();
-                var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + val + '&amp;size=50x50.png';
-                $('#barcode').attr('src', url);
-                $('#barcode').attr('href', url);
-                
-            }
-            
-        </script>
-    </head>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    function generateBarCode() {
+      document.getElementById("barcode").style.display = "inline"; //Visualizar 
+      var v = " ";
+      if (document.getElementById("raza").checked === true) {
+        v = v + $('#raza').val();
+      }
+      if (document.getElementById("telep").checked === true) {
+        v = v + $('#telep').val();
+      }
+      if (document.getElementById("telec").checked === true) {
+        v = v + $('#telec').val();
+      }
+      if (document.getElementById("calle").checked === true) {
+        v = v + $('#calle').val();
+      }
+      if (document.getElementById("mail").checked === true) {
+        v = v + $('#mail').val();
+      }
+      val = $('#text').val() + v;
+      var nric = $('#text').val();
+      var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + val + '&amp;size=50x50.png';
+      $('#barcode').attr('src', url);
+      $('#barcode').attr('href', url);
+
+    }
+
+  </script>
+</head>
 <div class="col-md-4 mx-auto">
-  <div class="card bg-custom-1 border-dark rounded text-center animated bounceInLeft boxshadow" >
+  <div class="card bg-custom-1 border-dark rounded text-center animated bounceInLeft boxshadow">
     <div class="card-header sombratexto font-weight-bold">
       <h3>Generador QR</h3>
     </div>
-        <div class="card-body shadow-lg  ">
-              <!-- Imagen QR-->
-              
-              <img id='barcode' download="QR" href="" class = "animated fadeIn buttonshadow barcode " alt="" title="QR" width="200" height="200"/>
-             
+    <div class="card-body shadow-lg  ">
+      <!-- Imagen QR-->
+
+      <img id='barcode' download="QR" href="" class="animated fadeIn buttonshadow barcode " alt="" title="QR"
+        width="200" height="200" />
+
       <form action="/dogs/generador-qr/{{dog._id}}?_method=PUT" method="POST">
         <!--<input type="hidden" name="_method" value="PUT">-->
-          <!--Esconder todos los atributos-->
-                <div class="form-group shadow-lg">
-                     <input type="text" style="display: none;" name="nombreperro" class="form-control" placeholder="Nombre del Perro" value="{{dog.nombreperro}} ">
-                </div>
-                 <div class="form-group shadow-lg">
-                     <input type="text"style="display: none;"  name="raza" class="form-control" placeholder="Raza" value="{{dog.raza}}">
-                </div>
-                <div class="form-group shadow-lg">
-                    <input type="number" style="display: none;" name="edadperro" class="form-control" placeholder="Edad del Perro"min="1" max="20"value="{{dog.edadperro}}">
-                </div>
-                <div class="form-group shadow-lg">
-                     <textarea name="descripcion" style="display: none;" class="form-control">{{dog.descripcion}}</textarea>
-                </div>
-                <div class="form-group shadow-lg">
-                    <input type="tel" pattern="[0-9]{9}" style="display: none;" class="form-control" name="tlfd" placeholder="(+36) Tlf Dueño" value="{{dog.tlfd}}">
-                </div>
-                <div class="form-group shadow-lg">
-                  <input type="tel" pattern="[0-9]{9}" style="display: none;" class="form-control" name="tlfc" placeholder="(+36) Tlf Clinica" value="{{dog.tlfc}}">
-                </div>
+        <!--Esconder todos los atributos-->
+        <div class="form-group shadow-lg">
+          <input type="text" style="display: none;" name="nombreperro" class="form-control"
+            placeholder="Nombre del Perro" value="{{dog.nombreperro}} ">
+        </div>
+        <div class="form-group shadow-lg">
+          <input type="text" style="display: none;" name="raza" class="form-control" placeholder="Raza"
+            value="{{dog.raza}}">
+        </div>
+        <div class="form-group shadow-lg">
+          <input type="number" style="display: none;" name="edadperro" class="form-control" placeholder="Edad del Perro"
+            min="1" max="20" value="{{dog.edadperro}}">
+        </div>
+        <div class="form-group shadow-lg">
+          <textarea name="descripcion" style="display: none;" class="form-control">{{dog.descripcion}}</textarea>
+        </div>
+        <div class="form-group shadow-lg">
+          <input type="tel" pattern="[0-9]{9}" style="display: none;" class="form-control" name="tlfd"
+            placeholder="(+36) Tlf Dueño" value="{{dog.tlfd}}">
+        </div>
+        <div class="form-group shadow-lg">
+          <input type="tel" pattern="[0-9]{9}" style="display: none;" class="form-control" name="tlfc"
+            placeholder="(+36) Tlf Clinica" value="{{dog.tlfc}}">
+        </div>
 
 
 
-              <!-- Checkboxes-->
-              
-              <div class="card bg-custom-1 border-0 p-4">
+        <!-- Checkboxes-->
 
-                  <h5 class="h5">Selecciona datos extra</h5>
-              
-                <div class="container d-flex">
-                  <div class=" custom-control custom-switch   p-2">
-                    <input class=" custom-control-input" type="checkbox" id="raza" value= " »Raza : {{dog.raza}}">
-                    <label class=" custom-control-label letras" for="raza">Raza del Perro</label>
-                  </div>
-                </div>
+        <div class="card bg-custom-1 border-0 p-4">
 
-                <div class="container d-flex">
-                  <div class="custom-control custom-switch  p-2">
-                    <input class="custom-control-input" type="checkbox" id="telep" value= " »Tel : {{dog.tlfd}}">
-                    <label class="custom-control-label letras" for="telep">Telefono Dueño</label>
-                  </div>
-                </div>
+          <h5 class="h5">Selecciona datos extra</h5>
 
-                <div class="container d-flex">
-                  <div class="custom-control custom-switch p-2">
-                    <input class="custom-control-input" type="checkbox" id="telec" value= " »TelClinica : {{dog.tlfc}}">
-                    <label class="custom-control-label letras" for="telec">Telefono Clinica</label>
-                  </div>
-                </div>
+          <div class="container d-flex">
+            <div class=" custom-control custom-switch   p-2">
+              <input class=" custom-control-input" type="checkbox" id="raza" value=" »Raza : {{dog.raza}}">
+              <label class=" custom-control-label letras" for="raza">Raza del Perro</label>
+            </div>
+          </div>
 
-                <div class="container d-flex">
-                  <div class="custom-control custom-switch p-2">
-                    <input class="custom-control-input" type="checkbox" id="calle" value= " »Calle : {{user.calle}}">
-                    <label class="custom-control-label letras" for="calle"> Calle</label>
-                  </div>
-                </div>
+          <div class="container d-flex">
+            <div class="custom-control custom-switch  p-2">
+              <input class="custom-control-input" type="checkbox" id="telep" value=" »Tel : {{dog.tlfd}}">
+              <label class="custom-control-label letras" for="telep">Telefono Dueño</label>
+            </div>
+          </div>
 
-                <div class="container d-flex">
-                  <div class="custom-control custom-switch  p-2">
-                    <input class="custom-control-input" type="checkbox" id="mail" value= " »Email : {{user.email}}">
-                    <label class="custom-control-label letras" for="mail">Email</label>
-                  </div>
-                </div>
-              </div>
-               
-                <!----->
-                  <div class="form-group buttonshadow ">
-                    <button class="btn btn-dark letras font-weight-bold btn-block shadow-lg" id="text" value="»Nombre del perro: {{dog.nombreperro}} »Nombre dueño: {{user.nombre}}" type="button" onclick='generateBarCode();'>
-                      Generar QR
-                    </button>
-                  </div>  
-          <!----->
-             
-              <div class="form-group">
-              <button class="btn btn-danger negro font-weight-bold btn-block buttonshadow" type="submit">
-                    Volver
+          <div class="container d-flex">
+            <div class="custom-control custom-switch p-2">
+              <input class="custom-control-input" type="checkbox" id="telec" value=" »TelClinica : {{dog.tlfc}}">
+              <label class="custom-control-label letras" for="telec">Telefono Clinica</label>
+            </div>
+          </div>
+
+          <div class="container d-flex">
+            <div class="custom-control custom-switch p-2">
+              <input class="custom-control-input" type="checkbox" id="calle" value=" »Calle : {{user.calle}}">
+              <label class="custom-control-label letras" for="calle"> Calle</label>
+            </div>
+          </div>
+
+          <div class="container d-flex">
+            <div class="custom-control custom-switch  p-2">
+              <input class="custom-control-input" type="checkbox" id="mail" value=" »Email : {{user.email}}">
+              <label class="custom-control-label letras" for="mail">Email</label>
+            </div>
+          </div>
+        </div>
+
+        <!----->
+        <div class="form-group buttonshadow ">
+          <button class="btn btn-dark letras font-weight-bold btn-block shadow-lg" id="text"
+            value="»Nombre del perro: {{dog.nombreperro}} »Nombre dueño: {{user.nombre}}" type="button"
+            onclick='generateBarCode();'>
+            Generar QR
+          </button>
+        </div>
+        <!----->
+
+        <div class="form-group">
+          <button class="btn btn-danger negro font-weight-bold btn-block buttonshadow" type="submit">
+            Volver
           </button>
         </div>
       </form>

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 //Modelo de datos del Perfil del Perro
 const DogSchema = new Schema({
@@ -34,7 +34,6 @@ const DogSchema = new Schema({
     type: Number,
     required: true
   }
-
 });
 
-module.exports = mongoose.model('Dog', DogSchema);
+module.exports = mongoose.model("Dog", DogSchema);

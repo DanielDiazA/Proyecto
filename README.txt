@@ -13,9 +13,11 @@ Tener instalado gestor de paquetes de Node(npm)
 
 -----Ejecución de la app-----
 1.Iniciar mongodb
-2.npm install
-3.node src/index.js o heroku local web
+2.npm install (para las dependencias)
+3.node src/index.js o heroku local web (Arrancar servidor)
 4.Dirigirse a http://localhost:3000/ o a http://localhost:5000/ en caso de utilizar heroku.
+
+
 
 
 
