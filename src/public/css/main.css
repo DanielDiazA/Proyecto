@@ -20,10 +20,6 @@ body {
   }
 }
 
-
-
-
-
 .logo {
   width: 30%;
 }
@@ -166,33 +162,4 @@ p {
 }
 
 
-.nav-color{
-  -webkit-animation: bgcolor 20s infinite;
-  animation: bgcolor 10s infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-
-}
-
-@keyframes bgcolor {
-  0% {
-      background-color: #343535
-  }
-
-  25% {
-      background-color: #424444
-  }
-
-  50% {
-      background-color: #505050
-  }
-
-  75% {
-      background-color: #424444
-  }
-
-  100% {
-      background-color: #343535
-  }
-}
 
