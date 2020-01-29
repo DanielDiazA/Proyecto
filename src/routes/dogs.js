@@ -106,19 +106,10 @@ router.get("/dogs/qr/:id", isAuthenticated, async (req, res) => {
   res.render("dogs/generador-qr", { dog });
 });
 
-router.put("/dogs/generador-qr/:id", isAuthenticated, async (req, res) => {
-  const { nombreperro, raza, edadperro, descripcion, tlfd, tlfc } = req.body;
-  await Dog.findByIdAndUpdate(req.params.id, {
-    nombreperro,
-    raza,
-    edadperro,
-    descripcion,
-    tlfd,
-    tlfc
-  });
-  //req.flash('success_msg', 'Correcto');
+router.get("/dogs/generador-qr/:id", isAuthenticated, async (req, res) => {
   res.redirect("/dogs");
 });
+
 
 // Delete Dogs
 router.delete("/dogs/delete/:id", isAuthenticated, async (req, res) => {
