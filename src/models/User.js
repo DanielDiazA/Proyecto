@@ -35,7 +35,7 @@ const UserSchema = new Schema({
 });
 //Cifrado
 UserSchema.methods.encryptPassword = async password => {
-  //generar Hash numero de veces(8) para aplicar el algoritmo
+  //generar Hash numero de veces(10) para aplicar el algoritmo
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
   return hash;
