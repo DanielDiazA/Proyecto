@@ -1,16 +1,28 @@
 body {
-  background: rgb(63, 204, 20); /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    rgb(231, 165, 110),
-    rgb(210, 231, 131)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    rgb(231, 165, 110),
-    rgb(210, 231, 131)
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-45deg,#9BD04E ,#EBB954 ,#9BD04E ,#EBB954 ,#9BD04E);
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 15s ease-in-out infinite;
 }
+@keyframes change{
+  0% {
+      background-position: 0 50%;
+  }
+
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0 50%;
+  }
+}
+
+
+
+
 
 .logo {
   width: 30%;
@@ -151,5 +163,36 @@ p {
   font-size: 20px;
   text-align: center;
   line-height: 20px;
+}
+
+
+.nav-color{
+  -webkit-animation: bgcolor 20s infinite;
+  animation: bgcolor 10s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+
+}
+
+@keyframes bgcolor {
+  0% {
+      background-color: #343535
+  }
+
+  25% {
+      background-color: #424444
+  }
+
+  50% {
+      background-color: #505050
+  }
+
+  75% {
+      background-color: #424444
+  }
+
+  100% {
+      background-color: #343535
+  }
 }
 
