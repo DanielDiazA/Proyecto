@@ -161,4 +161,41 @@ p {
   line-height: 20px;
 }
 
+#listavet {
+  display: none;
+}
 
+
+.map-container-5{
+  overflow:hidden;
+  padding-bottom:70%;
+  position:relative;
+  height:0;
+}
+.map-container-5 #map{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+   border: 1px solid #ccc;
+  border-radius: 3px;
+  position:absolute;
+}
+.vertical-center {
+min-height: 7%;  /* Fallback for browsers do NOT support vh unit */
+min-height: 7vh; /* These two lines are counted as one :-)       */
+
+display: flex;
+align-items: center;
+}
+
+#listing{
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+#findhotels{
+  font-size: 1.4em;
+  text-align: end;
+}

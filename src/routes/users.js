@@ -72,7 +72,7 @@ router.post("/users/signup", async (req, res) => {
     } else {
       newUser.password = await newUser.encryptPassword(password); //cifrar pass
       await newUser.save();
-      req.flash("success_msg", "Te has registrado con exito!");
+      req.flash("success_msg", "Bienvenido a NeverLostDog");
       res.redirect("/users/signin");
     }
   }

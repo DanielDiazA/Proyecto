@@ -9,5 +9,9 @@ router.get("/", (req, res) => {
 router.get("/about", (req, res) => {
   res.render("about");
 });
+//Al visitar maps
+router.get("/maps", (req, res) => {
+  res.render("maps");
+});
 
 module.exports = router;
