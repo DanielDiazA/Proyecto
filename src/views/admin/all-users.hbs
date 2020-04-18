@@ -1,0 +1,36 @@
+{{#if users}}
+<div class="rowhey">
+    <div class="huju">
+        {{#each users}}
+        <ul class="list-group">
+            <li class="list-group-item"> 
+                <div class="badge">Nombre: {{this.nombre}}</div>
+                <br>
+                <div class="badge">Apellido: {{this.apellido}}</div>
+                <br>
+                <div class="badge">Calle: {{this.calle}}</div>
+                <br>
+                <div class="badge">Tlf: {{this.tlf}}</div>
+                <br>
+                <div class="badge">Email: {{this.email}}</div>
+                <br><br>
+                
+                <div class="form-group float-sm-right ">
+                    <button class="btn btn-dark" >
+                        Eliminar
+                    </button>
+                </div>
+            </li>
+            <hr>
+        </ul>
+        {{/each}}
+    </div>
+</div>
+<br><br>
+{{else}}
+<br><br><br><br><br>
+<div class="empty-cart">
+    <h1>No hay Usuarios disponibles</h1>
+</div>
+</div>
+{{/if}}

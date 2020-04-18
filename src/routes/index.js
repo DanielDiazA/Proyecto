@@ -110,8 +110,7 @@ router.post('/pago', isAuthenticated, async(req, res, next)=> {
               cart: cart,
               address: req.body.address,
               name: req.body.name,
-              paymentId: charge.id,
-              tramitado:true
+              paymentId: charge.id
           });
            order.save(async(err, result)=> {
               await req.flash('success', 'Payment successful');

@@ -1,87 +1,54 @@
-<html>
 <style>
+    .pedido-tramitado {
+        background-color: rgb(22, 202, 22);
+    }
+
     .pedido-sintramitar {
         background-color: rgb(223, 92, 16);
     }
 </style>
 
-<body>
 
 
-    {{#if orders}}
-    <div class="rowhey">
-        <div class="huju">
-            <ul class="list-group">
-                {{#each orders}}
-                <li class="list-group-item pedido-sintramitar">
+{{#if orders}}
+<div class="rowhey">
+    <div class="huju">
+        {{#each orders}}
 
-                    <strong>Id del pedido: {{this.paymentId}}</strong>
-                    <br>
-                    <div class="badge">Nombre: {{this.name}}</div>
-                    <br>
-                    <div class="badge">Dirección: {{this.address}}</div>
-                    <br>
-                    <div class="badge">Pago: {{this.cart.totalPrice}} €</div>
-                    <br>
-
-                    <div class="badge">Unidades {{this.cart.totalQty}}</div>
-                    <br>
-                    <p id="demo" value={{this.cart.items}}> </p>
-                    <div class="badge">Unidades {{this.cart.items}}</div>
-                    <br>
-                    <div class="form-group shadow-lg">
-                        <input type="text" style="display: none;" class="form-control" id="carro" name="nombre" placeholder="Nombre" value="{{this.cart.items}}">
-                     </div>
-
-
-
-
-
-                    <div class="btn-group" style="float: right">
-                        <button class="btn btn-primary btn-xs dropdown-toggle" type="button"
-                            data-toggle="dropdown">Action
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
-
-                            <a class="dropdown-item" href="/reduce/{{this.item._id}}">Reducir 1 ud</a>
-                            <a class="dropdown-item" href="/remove/{{this.item._id}}">Eliminar Producto</a>
-                        </ul>
-                    </div>
-
-                </li>
-                <hr>
-                {{/each}}
-            </ul>
-        </div>
+        <ul class="list-group">
+            {{#if this.tramitado}}
+            <li class="list-group-item pedido-tramitado">
+                {{else}}
+            <li class="list-group-item pedido-sintramitar">
+                {{/if }}
+                <div class="badge">Nombre: {{this.name}}</div>
+                <br>
+                <div class="badge">Dirección: {{this.address}}</div>
+                <br>
+                <div class="badge">Pago: {{this.cart.totalPrice}} €</div>
+                <br>
+                <div class="badge">Unidades {{this.cart.totalQty}}</div>
+                <br>
+                <div class="badge">Carro{{this.cart.item._id}}</div>
+                <br><br>
+                <b style="font-size:12px">Id del pedido: {{this.paymentId}}</b>
+                <div class="form-group float-sm-right ">
+                    <button class="btn btn-dark" >
+                        Gestionar
+                    </button>
+                </div>
+            </li>
+            <hr>
+        </ul>
+        {{/each}}
     </div>
-    <br><br>
-    <hr>
-    <div class="row">
-        <div class="checkoutHolder" style="margin-left: 15px">
-            <a href="/pago" type="button" class="btn btn-success">Realizar Pago<i class="fab fa-stripe"></i></a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="checkoutHolder" style="margin-left: 15px">
-            <a href="/pago" type="button" class="btn btn-primary">Realizar Pago<i class="fab fa-cc-paypal"></i></a>
-        </div>
-    </div>
-    {{else}}
-    <br><br><br><br><br>
-    <div class="empty-cart">
-        <h1>No hay Pedidos disponibles</h1>
-    </div>
-    </div>
-    {{/if}}
+</div>
+<br><br>
 
-
-    <script>
-        //var obj = [ "John", "Peter", "Sally", "Jane" ];
-        
-        var myJSON = JSON.stringify(obj);
-        document.getElementById("demo").innerHTML = myJSON;
-    </script>
-
-</body>
-
-</html>
+{{else}}
+<br><br><br><br><br>
+<div class="empty-cart">
+    <h1>No hay Pedidos disponibles</h1>
+</div>
+</div>
+{{/if}}

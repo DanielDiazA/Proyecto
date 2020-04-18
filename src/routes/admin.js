@@ -9,8 +9,11 @@ const Cart = require('../models/cart');
 const Order = require('../models/order');
 
 //Usuarios//
-
-
+//all users//
+router.get("/users", isAuthenticated, async (req, res) => {
+  const users = await User.find();
+  res.render("admin/all-users", { users });
+});
 
 
 //Pedidos//
