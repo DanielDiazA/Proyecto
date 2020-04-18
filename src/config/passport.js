@@ -18,7 +18,13 @@ passport.use(
         // Match Password's User
         const match = await user.matchPassword(password);
         if (match) {
-          return done(null, user);
+        //  if(user.email==="admin@gmail.com"){
+              //meter admin
+        //      return done(null,admin);
+       //   }else{
+          return done(null, user);//}
+
+
         } else {
           return done(null, false, { message: "Incorrect Password." });
         }

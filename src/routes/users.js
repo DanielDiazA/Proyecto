@@ -154,14 +154,6 @@ router.put("/users/modificaruser",isAuthenticated, async (req, res) => {
   }
 });
 
-
-
-
-
-
-
-
-
 //Deslogeo
 router.get("/users/logout", (req, res) => {
   req.logout();

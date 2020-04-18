@@ -7,20 +7,26 @@
     "dev": "nodemon src/"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniel Diaz",
   "license": "ISC",
   "dependencies": {
     "animate.css": "^3.7.2",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
+    "express-validator": "^5.0.3",
+    "handlebars-helpers": "^0.10.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.8.7",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "qrcode": "^1.4.4"
+    "qrcode": "^1.4.4",
+    "stripe": "^8.43.0"
   },
   "devDependencies": {
     "handlebars": "^4.5.0",

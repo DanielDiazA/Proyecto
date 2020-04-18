@@ -126,6 +126,7 @@ p {
   box-shadow: 5px 5px 5px grey;
 }
 
+/* Swiper*/
 .swiper-container {
   width: 100%;
   padding-top: 200px;
@@ -161,6 +162,8 @@ p {
   line-height: 20px;
 }
 
+
+/* Maps*/
 #listavet {
   display: none;
 }
@@ -198,4 +201,44 @@ align-items: center;
 #findhotels{
   font-size: 1.4em;
   text-align: end;
+}
+
+/*Shop */
+.thumbnail img {
+  height: 260px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.col-sm-shop2 {
+  border-style: solid;
+  border-color: #b3b3b3;
+  border-width: 0.02px;
+  padding: 8px;
+  background-color:#ffffff;
+  opacity: 0.2;
+  
+}
+.col-sm-shop2 p {
+  font-weight: bold;
+  color: #000000;
+}
+
+.captionText {
+  color: #7f7f7f;
+}
+
+.btnC {
+  float: right;
+}
+
+.price {
+  float: left;
+}
+
+/*ORDERS */
+.pedido-sintramitar{
+  background-color: maroon;
 }
