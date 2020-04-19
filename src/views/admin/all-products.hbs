@@ -1,0 +1,60 @@
+
+<div class="container p-5">
+<form action="/products/delete/{{_id}}?_method=DELETE" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit" class="btn negro btn-success  btn-sm animated bounceInUp"><i class="fas fa-plus"></i>  Añadir nuevo artículo</button>
+</form>
+<style>
+.grisaceo{
+    background-color: cadetblue;
+}
+
+</style>
+
+{{#if products}}
+<br>
+<div class="rowhey">
+    <div class="huju">
+        {{#each products}}
+        <ul class="list-group ">
+            <li class="list-group-item grisaceo">
+                <div class=" col-md-4 float-right ">
+                    <div class="thumbnail">
+                        <img class="img-responsive " src="{{this.imagePath}}" alt="..."><br>
+                    </div>
+                </div>
+                <div class=" col-md-4 ">
+                    <div class="badge"> Nombre articulo: {{this.title}}</div>
+                    <br>
+                    <div class="badge">Descripcion: {{this.description}}</div>
+                    <br>
+                    <div class="badge">Precio: {{this.price}}</div>
+                    <br>
+                    <div class="badge">Stock: {{this.cantidad}}</div>
+                    <br>
+                    <br>
+                    <form action="/products/delete/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn  btn-success  btn-sm animated bounceInUp">Modificar<i class="fas fa-cog"></i></button>
+                    </form>
+                    <br>
+                    <form action="/products/delete/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn  btn-dark  btn-sm animated bounceInUp">Eliminar <i class="fas fa-trash"></i></button>
+                    </form>
+                </div>
+            </li>
+            <hr>
+        </ul>
+        {{/each}}
+    </div>
+</div>
+<br><br>
+{{else}}
+<br><br><br><br><br>
+<div class="empty-cart">
+    <h1>No hay Productos disponibles</h1>
+</div>
+</div>
+{{/if}}
+</div>

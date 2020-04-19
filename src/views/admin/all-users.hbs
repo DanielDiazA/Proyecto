@@ -1,10 +1,11 @@
 {{#if users}}
+<div class="container p-5">
 <div class="rowhey">
     <div class="huju">
         {{#each users}}
         <ul class="list-group">
             <li class="list-group-item"> 
-                <div class="badge">Nombre: {{this.nombre}}</div>
+                <div class="badge"> Nombre: <b >{{this.nombre}}</b></div>
                 <br>
                 <div class="badge">Apellido: {{this.apellido}}</div>
                 <br>
@@ -14,12 +15,14 @@
                 <br>
                 <div class="badge">Email: {{this.email}}</div>
                 <br><br>
-                
-                <div class="form-group float-sm-right ">
-                    <button class="btn btn-dark" >
-                        Eliminar
-                    </button>
-                </div>
+                {{#operaciones this.email '===' "admin@gmail.com"}}
+                {{else}}
+                <form action="/users/delete/{{_id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit"
+              class="btn  btn-dark  btn-sm animated bounceInUp">Eliminar</button>
+          </form>
+          {{/operaciones}}
             </li>
             <hr>
         </ul>
@@ -31,6 +34,7 @@
 <br><br><br><br><br>
 <div class="empty-cart">
     <h1>No hay Usuarios disponibles</h1>
+</div>
 </div>
 </div>
 {{/if}}

@@ -1,0 +1,29 @@
+Blanco  #ffffff
+naranja  #fc6625
+gris claro #8f9491
+gris oscuro #474747
+negro #000000
+
+
+///////////Estilos de letra y tamaños//////////////
+
+
+
+
+________animaciones________
+
+
+
+--------Landing page-----------
+
+neverlostdog
+
+
+Genera códigos QR personalizables para tus mascotas
+
+Encuentra el veterinario más cercano
+
+Obten los productos más innovadores del mercado
+
+
+Footer de contacto

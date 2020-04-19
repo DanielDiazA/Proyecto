@@ -1,11 +1,24 @@
-body {
+
+.fondo-negro{
+  background-color: black;
+}
+
+body{
   width: 100%;
   height: 100vh;
   color: #fff;
-  background: linear-gradient(-45deg,#9BD04E ,#EBB954 ,#9BD04E ,#EBB954 ,#9BD04E);
+  background-color: white;
   background-size: 400% 400%;
   position: relative;
-  animation: change 15s ease-in-out infinite;
+  
+}
+.bg{
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background: linear-gradient(-45deg,rgb(180, 182, 179) ,rgb(83, 82, 79) ,rgb(68, 70, 66) ,rgb(83, 82, 79) ,rgb(180, 182, 179));
+  position: relative;
+  animation: change 20s ease-in-out infinite;
 }
 @keyframes change{
   0% {
@@ -238,7 +251,3 @@ align-items: center;
   float: left;
 }
 
-/*ORDERS */
-.pedido-sintramitar{
-  background-color: maroon;
-}
