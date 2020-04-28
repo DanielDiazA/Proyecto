@@ -1,0 +1,80 @@
+<style>
+    .container {
+        font-family: "Calibri", "sans-serif";
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<div class="container p-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card mt-4 text-center card colorfondopanel bordertop shadow-lg">
+                <div id="charge-error" class="alert alert-danger {{#if noError}}d-none{{/if}}">
+                    {{errMsg}}
+                </div>
+                <h1 class="h2w">
+                    Pago de la compra
+
+                </h1>
+                <h1 class="h2w">
+                    Precio Total: {{total}} €
+                    <hr class="grisclaro">
+                </h1>
+                <div class="card-body ">
+                    <form action="/pago" method="post" id="checkout-form">
+
+
+                        <div class="form-group">
+
+
+                            <div class="form-group">
+                                <label for="card-name"></label>
+                                <input type="text" id="card-name" class="form-control colorfondoform  borde8 "
+                                    placeholder="Card Holder Name" required name="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address"></label>
+                                <input type="text" id="address" class="form-control colorfondoform  borde8"
+                                    placeholder="Address" required name="address">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-number"></label>
+                                <input type="number" id="card-number" class="form-control colorfondoform  borde8"
+                                    placeholder="Debit Card Number" required>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="row" style="margin: 0px; padding: 0.2px;">
+                                    <label for="card-expiry-month"></label>
+                                    <input type="number" id="card-expiry-month"
+                                        class="form-control colorfondoform  borde8" placeholder="MM" style="width: 35%"
+                                        required>
+                                    &nbsp<label for="card-expiry-year"></label>
+                                    <input type="number" id="card-expiry-year" class="form-control colorfondoform  borde8"
+                                       min="20" placeholder="YY"  style="width: 35%" required>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card-cvc"></label>
+                                <input type="number" id="card-cvc" class="form-control colorfondoform  borde8"
+                                    placeholder="CVV" style="width: 35%" required>
+                            </div>
+                            <button type="submit"
+                                class="btn buttonn  transparent-background naranja allborders borde30">Realizar
+                                Pago</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/checkout.js"></script>

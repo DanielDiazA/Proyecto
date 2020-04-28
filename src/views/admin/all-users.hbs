@@ -1,40 +1,48 @@
 {{#if users}}
 <div class="container p-5">
-<div class="rowhey">
-    <div class="huju">
-        {{#each users}}
-        <ul class="list-group">
-            <li class="list-group-item"> 
-                <div class="badge"> Nombre: <b >{{this.nombre}}</b></div>
-                <br>
-                <div class="badge">Apellido: {{this.apellido}}</div>
-                <br>
-                <div class="badge">Calle: {{this.calle}}</div>
-                <br>
-                <div class="badge">Tlf: {{this.tlf}}</div>
-                <br>
-                <div class="badge">Email: {{this.email}}</div>
-                <br><br>
-                {{#operaciones this.email '===' "admin@gmail.com"}}
-                {{else}}
-                <form action="/users/delete/{{_id}}?_method=DELETE" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="submit"
-              class="btn  btn-dark  btn-sm animated bounceInUp">Eliminar</button>
-          </form>
-          {{/operaciones}}
-            </li>
-            <hr>
-        </ul>
-        {{/each}}
+    <h4 class="h10w">- Gestión de Usuarios -</h4>
+    <br>
+    <div class="rowhey">
+        <div class="huju">
+            {{#each users}}
+            <ul class="list-group">
+                <li class="list-group-item colorfondopanel bordertop">
+                    <div class="thumbnail3 ">
+                    <h4 class="titulos">Nombre: {{this.nombre}}</h4>
+                    {{#operaciones this.email '===' "admin@gmail.com"}}
+                    <img class=" img-responsive allbordersgris" src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/125568526/original/cd9c93141521436a112722e8c5c0c7ba0d60a4a2/be-your-telegram-group-admin.jpg" alt="...">
+                    {{else}}
+                     <img class=" img-responsive allbordersgris" src="data:image/png;base64,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" alt="...">
+                     {{/operaciones}}
+                    <br>
+                    <div class="h5w">Apellido: {{this.apellido}}</div>
+                    <br>
+                    <div class="h5w">Calle: {{this.calle}}</div>
+                    <br>
+                    <div class="h5w">Tlf: {{this.tlf}}</div>
+                    <br>
+                    <div class="h5w">Email: {{this.email}}</div>
+                    <br><br>
+                    {{#operaciones this.email '===' "admin@gmail.com"}}
+                    {{else}}
+                    <form action="/users/delete/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn  negro buttonb allbordersgris borde30">Eliminar</button>
+                    </form>
+                    {{/operaciones}}
+                    </div>
+                </li>
+                <hr>
+            </ul>
+            {{/each}}
+        </div>
     </div>
-</div>
-<br><br>
-{{else}}
-<br><br><br><br><br>
-<div class="empty-cart">
-    <h1>No hay Usuarios disponibles</h1>
-</div>
+    <br><br>
+    {{else}}
+    <br><br><br><br><br>
+    <div class="empty-cart">
+        <h1>No hay Usuarios disponibles</h1>
+    </div>
 </div>
 </div>
 {{/if}}

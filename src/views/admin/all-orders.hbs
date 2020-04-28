@@ -10,47 +10,54 @@
 
 
 
+
 {{#if orders}}
 <div class="container p-5">
-<div class="rowhey">
-    <div class="huju">
-        {{#each orders}}
+    <br><br>
+    <h4 class="h10w">- Todos los Pedidos -</h4>
+    <br>
 
-        <ul class="list-group">
-            {{#if this.tramitado}}
-            <li class="list-group-item pedido-tramitado">
-                {{else}}
-            <li class="list-group-item pedido-sintramitar">
-                {{/if }}
-                <div class="badge">Nombre: {{this.name}}</div>
-                <br>
-                <div class="badge">Dirección: {{this.address}}</div>
-                <br>
-                <div class="badge">Pago: {{this.cart.totalPrice}} €</div>
-                <br>
-                <div class="badge">Unidades {{this.cart.totalQty}}</div>
-                <br>
-                <div class="badge">Carro{{this.cart.item._id}}</div>
-                <br><br>
-                <b style="font-size:12px">Id del pedido: {{this.paymentId}}</b>
-                <div class="form-group float-sm-right ">
-                    <button class="btn btn-dark" >
-                        Gestionar
-                    </button>
-                </div>
-            </li>
-            <hr>
-        </ul>
-        {{/each}}
+
+    <div class="rowhey">
+        <div class="huju">
+            {{#each orders}}
+
+            <ul class="list-group">
+                {{#if this.tramitado}}
+                <li class="list-group-item colorfondopanel bordertopv animated bounceInUp">
+                    {{else}}
+                <li class="list-group-item  colorfondopanel bordertop animated bounceInUp">
+                    {{/if }}
+                    <div class="titulos">Nombre: {{this.name}}</div>
+                    <br>
+                    <div class="h5w">Dirección: {{this.address}}</div>
+                    <br>
+                    <div class="h5w">Pago: {{this.cart.totalPrice}} €</div>
+                    <br>
+                    <div class="h5w">Unidades {{this.cart.totalQty}}</div>
+                    <br>
+                    <div class="h5w">Carro{{this.cart.item._id}}</div>
+                    <br><br>
+                    <b style="font-size:12px">Id del pedido: {{this.paymentId}}</b>
+                   
+                   <form action="/orders/tramitar/{{_id}}?__method=PUT" method="POST">
+                                
+                                <button type="submit" name="tramitar" value="true" class="btn  negro buttonb allbordersgris borde30 "
+                                    style="float: right;">Tramitar <i class="fas fa-trash"></i></button>
+                    </form>
+                </li>
+                <hr>
+            </ul>
+            {{/each}}
+        </div>
     </div>
-</div>
-<br><br>
+    <br><br>
 
-{{else}}
-<br><br><br><br><br>
-<div class="empty-cart">
-    <h1>No hay Pedidos disponibles</h1>
-</div>
+    {{else}}
+    <br><br><br><br><br>
+    <div class="empty-cart">
+        <h1>No hay Pedidos disponibles</h1>
+    </div>
 </div>
 </div>
 {{/if}}

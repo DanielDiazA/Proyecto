@@ -7,12 +7,19 @@
 </div>
 {{/each}}
 
+
 <head>
+  <style>
+    input[type='checkbox']:checked + label{
+        color: white;
+    }
+  </style>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script type="text/javascript">
     function generateBarCode() {
       document.getElementById("barcode").style.display = "inline"; //Visualizar 
       var v = " ";
+      var rojo="255-0-0"
       if (document.getElementById("raza").checked === true) {
         v = v + $('#raza').val();
       }
@@ -30,81 +37,118 @@
       }
       val = $('#text').val() + v;
       var nric = $('#text').val();
-      var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + val + '&amp;size=50x50.png';
+      var tamaño= 'size=100x100;';
+      var opcion=document.getElementById("inputState").value;
+       if(opcion==="xxs"){
+        tamaño='size=70x70';
+      }
+      if(opcion==="xs"){
+        tamaño='size=80x80';
+      }
+      if(opcion==="s"){
+        tamaño='size=90x90';
+      }
+      if(opcion==="m"){
+        tamaño='size=100x100';
+      }
+      if(opcion==="l"){
+        tamaño='size=110x110';
+      }
+      if(opcion==="xl"){
+        tamaño='size=120x120';
+      }
+      
+      var fondo='FF0000'
+      var url = 'https://api.qrserver.com/v1/create-qr-code/?'+tamaño+'&data='+ val + '&amp; bgcolor=FF0000';
       $('#barcode').attr('src', url);
       $('#barcode').attr('href', url);
-
-    }
-
+      
+    } 
   </script>
 </head>
-<div class="col-md-6 mx-auto negro">
-  <div class="card bg-custom-1 border-dark rounded text-center animated bounceInLeft boxshadow">
-    <div class="card-header sombratexto font-weight-bold">
-      <h3>Generador QR</h3>
-    </div>
-    <div class="card-body shadow-lg">
-      
-      <!-- Imagen QR-->
-      <img id='barcode' download="QR" href="" class="animated fadeIn buttonshadow barcode img-fluid" alt="" title="QR"
-        width="200" height="200" />
+<div class="container  p-5 ">
+  <div class="col-md-6 mx-auto negro">
+    <div class="card  text-center colorfondopanel bordertop shadow-lg p-4">
+      <div class="card-body ">
+        <br>
+        <h3 class="h3w">Generador QR</h3>
+        <br>
+        <hr class="grisclaro">
+        <br>
+        <!-- Imagen QR-->
+        <img id='barcode' download="QR" href="" class="animated fadeIn  barcode img-fluid" alt="" title="QR" width="250"
+          height="200" />
 
-      <form action="/dogs/generador-qr/{{dog._id}}" method="GET">
-        <!-- Checkboxes-->
-        <div class="card bg-custom-1 border-0 p-4">
-          <h5 class="h5">Selecciona datos extra</h5>
-          <!-- RAZA-->
-          <div class="container d-flex">
-            <div class=" custom-control custom-switch   p-2">
-              <input class=" custom-control-input" type="checkbox" id="raza" value=" »Raza : {{dog.raza}}">
-              <label class=" custom-control-label letras" for="raza">Raza del Perro</label>
+        <form action="/dogs/generador-qr/{{dog._id}}" method="GET">
+          <!-- Checkboxes-->
+          <br>
+            <h5 class="h6 blanco">-Selecciona datos extra-</h5>
+            <!-- RAZA-->
+            <div class="container d-flex blancoclaro2">
+              <div class=" custom-control custom-switch   p-2">
+                <input class=" custom-control-input" type="checkbox" id="raza" value=" »Raza : {{dog.raza}}">
+                <label class=" custom-control-label letras" for="raza">Raza del Perro</label>
+              </div>
             </div>
-          </div>
-          <!--TELEFONO-->
-          <div class="container d-flex">
-            <div class="custom-control custom-switch  p-2">
-              <input class="custom-control-input" type="checkbox" id="telep" value=" »Tel : {{dog.tlfd}}">
-              <label class="custom-control-label letras" for="telep">Telefono Dueño</label>
+            <!--TELEFONO-->
+            <div class="container d-flex blancoclaro2">
+              <div class="custom-control custom-switch  p-2">
+                <input class="custom-control-input" type="checkbox" id="telep" value=" »Tel : {{dog.tlfd}}">
+                <label class="custom-control-label letras" for="telep">Telefono Dueño</label>
+              </div>
             </div>
-          </div>
-          <!--TELEFONO CLINICA-->
-          <div class="container d-flex">
-            <div class="custom-control custom-switch p-2">
-              <input class="custom-control-input" type="checkbox" id="telec" value=" »TelClinica : {{dog.tlfc}}">
-              <label class="custom-control-label letras" for="telec">Telefono Clinica</label>
+            <!--TELEFONO CLINICA-->
+            <div class="container d-flex blancoclaro2">
+              <div class="custom-control custom-switch p-2">
+                <input class="custom-control-input" type="checkbox" id="telec" value=" »TelClinica : {{dog.tlfc}}">
+                <label class="custom-control-label letras" for="telec">Telefono Clinica</label>
+              </div>
             </div>
-          </div>
-          <!--CALLE-->
-          <div class="container d-flex">
-            <div class="custom-control custom-switch p-2">
-              <input class="custom-control-input" type="checkbox" id="calle" value=" »Calle : {{user.calle}}">
-              <label class="custom-control-label letras" for="calle"> Calle</label>
+            <!--CALLE-->
+            <div class="container d-flex blancoclaro2">
+              <div class="custom-control custom-switch p-2">
+                <input class="custom-control-input" type="checkbox" id="calle" value=" »Calle : {{user.calle}}">
+                <label class="custom-control-label letras" for="calle"> Calle</label>
+              </div>
             </div>
-          </div>
-          <!--MAIL-->
-          <div class="container d-flex">
-            <div class="custom-control custom-switch  p-2">
-              <input class="custom-control-input" type="checkbox" id="mail" value=" »Email : {{user.email}}">
-              <label class="custom-control-label letras" for="mail">Email</label>
+            <!--MAIL-->
+            <div class="container d-flex blancoclaro2">
+              <div class="custom-control custom-switch  p-2">
+                <input class="custom-control-input" type="checkbox" id="mail" value=" »Email : {{user.email}}">
+                <label class="custom-control-label letras" for="mail">Email</label>
+              </div>
             </div>
+          <br>
+          <!--Tamaño-->
+          <h5 class="h6 blanco">-Tamaño-</h5>
+          <br>
+          <div class="form-group shadow-lg">
+            <select id="inputState" class="form-control colorfondoform  borde8" placeholder="Tamaño" name="tamaño">
+              <option value="xxs">Diminuta (XXS)</option>
+              <option value="xs">Muy Pequeña(XS)</option>
+              <option value="s">Pequeña (S)</option>
+              <option value="m"selected>Normal (M)</option>
+              <option value="l">Grande (L)</option>
+              <option value="xl">Muy grande (XL)</option>
+            </select>
           </div>
-        </div>
-        <!--BASE-->
-        <div class="form-group buttonshadow ">
-          <button class="btn btn-dark letras font-weight-bold btn-block shadow-lg" id="text"
-            value="»Nombre del perro: {{dog.nombreperro}} »Nombre dueño: {{user.nombre}}+{{user.apellido}}"
-            type="button" onclick='generateBarCode();'>
-            Generar QR
-          </button>
-        </div>
-        <!--VOLVER-->
-        <div class="form-group">
-          <button class="btn btn-danger negro font-weight-bold btn-block buttonshadow" type="submit">
-            Volver
-          </button>
-        </div>
+          <!--BASE-->
+          <div class="form-group  ">
+            <button class="btn buttonn  transparent-background naranja allborders borde30 btn-block" id="text"
+              value="»Nombre del perro: {{dog.nombreperro}} »Nombre dueño: {{user.nombre}}+{{user.apellido}}"
+              type="button" onclick='generateBarCode();'>
+              Generar QR
+            </button>
+          </div>
+          <!--VOLVER-->
+          <div class="form-group">
+            <button class="btn negro buttonb allbordersgris  btn-block borde30" type="submit">
+              Volver
+            </button>
+          </div>
 
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>

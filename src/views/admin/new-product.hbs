@@ -1,0 +1,79 @@
+<style>
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    img {
+    height: 320px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    visibility: hidden;
+}
+</style>
+<script type="text/javascript">
+    function setImageVisible(id, visible) {
+        var img = document.getElementById('imgv');
+        img.src=document.getElementById('imp').value;
+        img.style.visibility = (visible ? 'visible' : 'hidden');
+    }
+</script>
+
+<div class="container p-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card  text-center colorfondopanel bordertop">
+            <div class="card-body  shadow-lg mb-10">
+                <!--Donde enviamos los datos del formulario-->
+                <form action="/admin/new-product" method="POST">
+                    <br>
+                    <h3 class="h3w ">Nuevo Producto</h3>
+
+                    <hr class="grisclaro">
+                    <br>
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control colorfondoform borde8"
+                            placeholder="Nombre del Producto" autofocus>
+                    </div>
+                    <div class="form-group shadow-lg">
+                        <textarea name="description" class="form-control colorfondoform blanco borde8"
+                            placeholder="Descripción del Producto"></textarea>
+                    </div>
+                    <div class="form-group shadow-lg">
+                        <input type="number" name="price" class="form-control colorfondoform borde8"
+                            placeholder="Precio €" min="0.01" step=".01">
+                    </div>
+                    <div class="form-group shadow-lg">
+                        <input type="number" name="cantidad" class="form-control colorfondoform borde8"
+                            placeholder="Cantidad" min="0">
+                    </div>
+                    <div class="form-group previ">
+                        <input type="text" name="imagePath" id="imp" class="form-control colorfondoform borde8"
+                            placeholder="Enlace de la imagen" autofocus>
+
+                    </div>
+                   
+                    <br>
+                    
+                   <img class="img-responsive " id="imgv" src="" alt="..." style="visibility: hidden;"><br>
+                   
+                    <br>
+
+
+
+                    <div class="form-group previ">
+                        <a href="javascript:setImageVisible('myImageId', true)" class="btn buttonw2 transparent-background blanco allbordersw borde30 btn-block"
+                            onclick='generarImagen();'>
+                            Previsualizar imagen</button></a>
+                    </div>
+
+                    <div class="form-group shadow-lg">
+                        <br>
+                        <button class="btn buttonn transparent-background naranja allborders borde30 btn-block"
+                            type="submit">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,16 +1,20 @@
+<div class="container p-5">
 <div class="col-md-6 mx-auto">
-  <div class="card bg-custom-1 border-dark rounded text-center animated bounceInLeft boxshadow">
-    <div class="card-header sombratexto font-weight-bold ">
-      <h3>Nuevo Perro</h3>
-    </div>
+  <div class="card  text-center colorfondopanel bordertop">
     <div class="card-body  shadow-lg mb-10">
       <!--Donde enviamos los datos del formulario-->
       <form action="/dogs/new-dog" method="POST">
-        <div class="form-group shadow-lg">
-          <input type="text" name="nombreperro" class="form-control" placeholder="Nombre del Perro" autofocus>
+      <br>
+      <h3 class="h3w ">Nuevo Perro</h3>
+      
+      <hr class="grisclaro">
+      <br>
+        <div class="form-group">
+          <input type="text" name="nombreperro" class="form-control colorfondoform borde8" placeholder="Nombre del Perro" autofocus>
         </div>
         <div class="form-group shadow-lg">
-          <select id="inputState" class="form-control" placeholder="Raza" name="raza">
+          <select id="inputState" class="form-control colorfondoform seleccion borde8" placeholder="Raza" name="raza">
+            <option disabled="disabled" selected="selected">Selecciona una Raza </option>
             <option>Beagle</option>
             <option>BichonMaltes</option>
             <option>Boxer</option>
@@ -38,24 +42,26 @@
           </select>
         </div>
         <div class="form-group shadow-lg">
-          <input type="number" name="edadperro" class="form-control" placeholder="Edad del Perro" min="1" max="20">
+          <input type="number" name="edadperro" class="form-control colorfondoform borde8" placeholder="Edad del Perro" min="1" max="20">
         </div>
         <div class="form-group shadow-lg">
-          <textarea name="descripcion" class="form-control" placeholder="Descripción"></textarea>
+          <textarea name="descripcion" class="form-control colorfondoform blanco borde8" placeholder="Descripción"></textarea>
         </div>
         <div class="form-group shadow-lg">
-          <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfd" placeholder="(+36) Tlf Dueño"
+          <input type="tel" pattern="[0-9]{9}" class="form-control colorfondoform borde8" name="tlfd" placeholder="(+36) Tlf Dueño"
             value="{{user.tlf}}">
         </div>
         <div class="form-group shadow-lg">
-          <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlfc" placeholder="(+36) Tlf Clinica">
+          <input type="tel" pattern="[0-9]{9}" class="form-control colorfondoform borde8" name="tlfc" placeholder="(+36) Tlf Clinica">
         </div>
         <div class="form-group shadow-lg">
-          <button class="btn btn-success negro font-weight-bold btn-block buttonshadow" type="submit">
+          <br>
+          <button class="btn buttonn transparent-background naranja allborders borde30 btn-block" type="submit">
             Guardar
           </button>
         </div>
       </form>
     </div>
   </div>
+</div>
 </div>

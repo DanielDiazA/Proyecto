@@ -6,7 +6,7 @@
     input[type=text], select, textarea {
       width: 98%;
       padding: 12px;
-      border: 1px solid rgb(110, 107, 107);
+      border: 1px solid white;
       border-radius: 20px;
       resize: vertical;
       margin-top: 3%;
@@ -14,26 +14,27 @@
     </style>
   </head>
   <body>
-    <div class="container p-5">
+ <div class="container p-5">
 <div class="negro" >
-<div class="card mb-4 text-center card bg-custom-1 border-dark animated bounceInLeft boxshadow " style="border-radius: 20px;">
-<div class="row no-gutters vertical-center ">
-  
+   <hr class="naranja">
+   <br>
+<div class="card mb-4 text-center transparent-background" style="border: none;">
+<div class="row no-gutters vertical-center">
+ 
   <div class="col-md-4 mb-4 ">
     
       <div id="findhotels">
         Buscar clínica veterinaria en:
       </div>
-    
     </div>
     <div class="col-md-4 mb-4" >
         <div id="locationField">
-        <input id="autocomplete" placeholder="Ciudad" type="text"  style="width: 95%;"/>
+        <input id="autocomplete" class="colorfondoform" placeholder="Ciudad" type="text"  style="width: 95%;"/>
       </div>
     </div>
-    <div class="col-md-4 mb-4 ">
-         <div id="controls" >
-        <select id="country" >
+    <div class="col-md-4 mb-4">
+         <div id="controls">
+        <select id="country" class="colorfondoform blanco">
           <option value="es" selected>España</option>
           <option value="au">Australia</option>
           <option value="br">Brasil</option>
@@ -54,25 +55,25 @@
     </div>
 </div>
 
+<hr class="naranja">
+
 <div class="row ">
-  <div class="col-md-8 mb-4">
-    <div class="card border-dark card-cascade narrower text-center card bg-custom-1 animated bounceInLeft boxshadow" style="border-radius: 20px;">
-      <div class="view view-cascade gradient-card-header blue-gradient">
-        <h5 class="mb-0" style="margin-top: 2%;">Clínicas Veterinarias</h5>
-      </div>
+  <div class="col-md-8 mb-4 ">
+    <div class="card border-dark card-cascade narrower text-center transparent-background   "style="border: none;">
       <div class="card-body card-body-cascade text-center">
-        <div id="map-container-google-8" class="z-depth-1-half map-container-5" style="height: 300px">
+        <div id="map-container-google-8" class="z-depth-1-half map-container-5 " style="height: 300px;">
           <div id="map"></div>
         </div>
       </div>
     </div>
   </div>
   <div class="col-md-4 mb-4">
-    <div class="card mb-4 text-center card bg-custom-1  animated bounceInRight boxshadow" id="listavet" style=" border: 1px solid #333;
-  border-radius: 20px;" >
-    <div id="listing"  >
+  
+    <div class="card mb-4 text-center  animated bounceInRight transparent-background " id="listavet" style="border: none;">
+    <div id="listing" >
+      <p class="titulomaps"> Resultados de la busqueda</p>
       <table id="resultsTable">
-        <tbody id="results"></tbody>
+        <tbody id="results" class=" border-radius:3px;"></tbody>
       </table>
     </div>
     </div>

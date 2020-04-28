@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="refresh" content="120"/><!-- ACTUALIZACIÓN CADA 60 segs -->
+  <meta http-equiv="refresh" content="900" /><!-- ACTUALIZACIÓN CADA 60 segs -->
   <title>NeverLostDog</title>
   <!-- BOOTSTRAP - BOOTSWATCH THEME - LUX -->
   <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
   <!-- FONT AWESOME -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="/css/main.css">
   <!-- ANIMATE.CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <!-- Fuentes -->
   <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
- 
- 
+
+
 </head>
 
 <body>
+
   {{> navbar }}
- 
- <!--<div class="container p-5">-->
+  <div class="colorfondopanel" style="cursor: default;">
+    <!--<div class="container p-5">-->
     {{> messages }}
     <!--Partials/messages.hbs-->
     {{> errors }}
     <!--Partials/errors.hbs-->
     {{{ body }}}
- 
-<!--</div>-->
+  </div>
+  <!--</div>-->
+  {{>footer}}
+
 
   <!-- Scritps -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -42,10 +48,37 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+
+    <!-- Start of Async Drift Code -->
+<script>
+  "use strict";
+
+  !function () {
+    var t = window.driftt = window.drift = window.driftt || [];
+    if (!t.init) {
+      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+      t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+        t.factory = function (e) {
+          return function () {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function (e) {
+          t[e] = t.factory(e);
+        }), t.load = function (t) {
+          var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        };
+    }
+  }();
+  drift.SNIPPET_VERSION = '0.3.1';
+  drift.load('5r9hvf47wxkh');
+</script>
+<!-- End of Async Drift Code -->
   <!-- Footer -->
 </body>
-<div class="footer-copyright  text-center negro py-3">© 2020 Copyright:
-  <a href="mailto:danieldiaz@opendeusto.es"> All rights reserved danieldiaz@opendeusto.es</a>
-</div>
+
 
 </html>

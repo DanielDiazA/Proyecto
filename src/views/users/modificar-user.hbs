@@ -1,48 +1,54 @@
-<div class="row">
-  <div class="col-md-6 mx-auto">
-    <div class="card card bg-custom-1 border-dark rounded text-center  animated bounceInLeft boxshadow">
-      <div class="card-header sombratexto font-weight-bold">
-        <h3>Perfil</h3>
-      </div>
-      <img class="rounded-circle mx-auto d-block logo m-4" src="/img/user.png" alt="Logo">
-      <div class="card-body ">
-        <form action="/users/modificaruser?_method=PUT" method="POST">
-        <input type="hidden" name="_method" value="PUT">
-          <!--Nombre-->
-          <div class="form-group shadow-lg">
-            <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{user.nombre}}">
-          </div>
-          <!--Apellido-->
-          <div class="form-group shadow-lg">
-            <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="{{user.apellido}}">
-          </div>
-          <!--Calle-->
-          <div class="form-group shadow-lg">
-            <input type="text" class="form-control" name="calle" placeholder="Calle" value="{{user.calle}}">
-          </div>
-          <!--Telefono-->
-          <div class="form-group shadow-lg">
-            <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlf" placeholder="(+36) Tlf"
-              value="{{user.tlf}}">
-          </div>
-          <!--Email-->
-          <div class="form-group shadow-lg">
-            <input type="email" class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-              placeholder="Email" value="{{user.email}}" readonly>
-          </div>
-          <!--Password-->
-          <div class="form-group shadow-lg">
-            <input type="password" class="form-control" name="password" placeholder="Contraseña" value="">
-          </div>
-          <!--RepPassword-->
-          <div class="form-group shadow-lg">
-            <input type="password" class="form-control" name="confirm_password" placeholder="Repetir Contraseña"
-              value="">
-          </div>
-          <button class="btn btn-success negro font-weight-bold btn-block buttonshadow">
-            Guardar
-          </button>
-        </form>
+<div class="container p-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <br>
+      <div class="card card text-center colorfondopanel bordertop shadow-lg">
+        <br>
+        <h1 class="h2w">
+          Perfil
+          <hr class="grisclaro">
+        </h1>
+        <img class="rounded-circle mx-auto d-block logo m-4" src="/img/user.png" alt="Logo">
+        <div class="card-body ">
+          <form action="/users/modificaruser?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+            <!--Nombre-->
+            <div class="form-group shadow-lg">
+              <input type="text" class="form-control colorfondoform  borde8" name="nombre" placeholder="Nombre" value="{{user.nombre}}">
+            </div>
+            <!--Apellido-->
+            <div class="form-group shadow-lg">
+              <input type="text" class="form-control colorfondoform  borde8" name="apellido" placeholder="Apellido" value="{{user.apellido}}">
+            </div>
+            <!--Calle-->
+            <div class="form-group shadow-lg">
+              <input type="text" class="form-control colorfondoform  borde8" name="calle" placeholder="Calle" value="{{user.calle}}">
+            </div>
+            <!--Telefono-->
+            <div class="form-group shadow-lg">
+              <input type="tel" pattern="[0-9]{9}" class="form-control colorfondoform  borde8" name="tlf" placeholder="(+36) Tlf"
+                value="{{user.tlf}}">
+            </div>
+            <!--Email-->
+            <div class="form-group shadow-lg"> 
+              <input type="email" class="form-control colorfondoform  borde8" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                placeholder="Email" value="{{user.email}}" readonly>
+            </div>
+            <!--Password-->
+            <div class="form-group shadow-lg">
+              <input type="password" class="form-control colorfondoform  borde8" name="password" placeholder="Contraseña" value="">
+            </div>
+            <!--RepPassword-->
+            <div class="form-group shadow-lg">
+              <input type="password" class="form-control colorfondoform  borde8" name="confirm_password" placeholder="Repetir Contraseña"
+                value="">
+            </div>
+            <br>
+            <button class="btn buttonn  transparent-background naranja allborders borde30">
+              Guardar
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>

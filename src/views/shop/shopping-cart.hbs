@@ -1,0 +1,105 @@
+<style>
+    .h5w {
+        text-align: left;
+    }
+</style>
+<script>
+    function triggerMe() {
+        var DelayhrefCall;
+
+        if (document.getElementById("ps")) {
+
+            alert("Reduce la cantidad de Productos.");
+
+        }
+        else {
+
+            DelayhrefCall = window.setTimeout(hrefCall);
+        }
+
+
+
+    }
+    function hrefCall() {
+        document.getElementById('GoToHref').click();
+    }
+</script>
+<br><br>
+{{#if products}}
+<div class="container p-5">
+    <h4 class="h10w">- Tu Carrito NeverLostdog -</h4>
+    <br>
+    <div class="rowhey">
+        <div class="huju">
+            <ul class="list-group ">
+                {{#each products}}
+                <li class="list-group-item colorfondopanel bordertop">
+
+                    <div class="thumbnail3 ">
+                        <h4 class="titulos">{{this.item.title}}</h4>
+                        <img class=" img-responsive allbordersgris" src="{{this.item.imagePath}}" alt="...">
+                        <br>
+
+                        <div class=" h5w">Descripcion del producto: {{this.item.description}}</div>
+                        <br>
+                        <div class=" h5w">Cantidad: {{this.qty}}</div>
+                        <br>
+                        <div class=" h5w">Precio ud: {{this.item.price}} €</div>
+                        <br>
+                        <div class="h5w">Precio Total: {{this.price}} €</div>
+                        <br>
+
+                        {{#comp this.qty 'gt' this.item.cantidad}}
+                        <br>
+                        <br>
+                        <p class="ps" id="ps" style="text-align: left;"> <i class="fas fa-exclamation-circle"> Excedes
+                                el número
+                                de unidades que se encuentran
+                                disponibles en stock, no podra proceder con el pago. (Stock
+                                Actual:{{this.item.cantidad}}uds)</i>
+                            <p>
+                                {{/comp}}
+                                <br>
+                                <div class=" h7w">Cantidad de uds:</div>
+                                <a class="menos" href="/reduce5/{{this.item._id}}">-5</a>
+                                <a class="menos" href="/reduce/{{this.item._id}}">-1</a>
+                                <a class="menos" href="/add1/{{this.item._id}}">+1</a>
+                                <a class="menos" href="/add5/{{this.item._id}}">+5</a>
+                                <a href="/remove/{{this.item._id}}"
+                                    style="float: right; font-size:20px;color:#ce5a29;"><i class="fas fa-times"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <br><br>
+    <div class="rowhey">
+        <div class="huju">
+            <strong>Total a pagar: {{totalPrice}} €</strong>
+        </div>
+    </div>
+    <hr class="grisclaro">
+    <div class="row">
+        <div class="checkoutHolder" style="margin-left: 15px">
+            <a href="#" onclick="triggerMe();" type="button" class="btn btn-success"><i class="fab fa-stripe fa-2x"></i></a>
+        </div>
+    </div>
+    <form action="/pago"><button id="GoToHref" style="display:none"></button>
+    </form>
+
+    {{else}}
+    <br><br><br><br><br>
+    <div class="empty-cart ">
+        <h3 class="h3w">Oops!</h3>
+        <br>
+        <br>
+        <h4 class="h6 blanco">Tu carro está vacio</h4>
+        <br>
+
+        <a href="/shop" class="btn buttonn  transparent-background naranja allborders borde30">Ir a la tienda</a>
+        <br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><b><br><br></b>
+    </div>
+</div>
+</div>
+{{/if}}

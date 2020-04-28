@@ -1,50 +1,62 @@
 <div class="container p-5">
-<div class="row">
-  <div class="col-md-6 mx-auto">
-    <div class="card card bg-custom-1 border-dark rounded text-center  animated bounceInLeft boxshadow">
-      <div class="card-header sombratexto font-weight-bold">
-        <h3>Registro</h3>
-      </div>
-      <img class="rounded-circle mx-auto d-block logo m-4" src="/img/user.png" alt="Logo">
-      <div class="card-body ">
-        <form action="/users/signup" method="POST">
-          <!--Nombre-->
-          <div class="form-group shadow-lg">
-            <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{nombre}}">
-          </div>
-          <!--Apellido-->
-          <div class="form-group shadow-lg">
-            <input type="text" class="form-control" name="apellido" placeholder="Apellido" value="{{apellido}}">
-          </div>
-          <!--Calle-->
-          <div class="form-group shadow-lg">
-            <input type="text" class="form-control" name="calle" placeholder="Calle" value="{{calle}}">
-          </div>
-          <!--Telefono-->
-          <div class="form-group shadow-lg">
-            <input type="tel" pattern="[0-9]{9}" class="form-control" name="tlf" placeholder="(+36) Tlf"
-              value="{{tlf}}">
-          </div>
-          <!--Email-->
-          <div class="form-group shadow-lg">
-            <input type="email" class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-              placeholder="Email" value="{{email}}">
-          </div>
-          <!--Password-->
-          <div class="form-group shadow-lg">
-            <input type="password" class="form-control" name="password" placeholder="Contraseña" value="{{password}}">
-          </div>
-          <!--RepPassword-->
-          <div class="form-group shadow-lg">
-            <input type="password" class="form-control" name="confirm_password" placeholder="Repetir Contraseña"
-              value="{{confirm_password}}">
-          </div>
-          <button class="btn btn-success negro font-weight-bold btn-block buttonshadow">
-            Registrarse
-          </button>
-        </form>
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card mt-4 text-center card colorfondopanel bordertop shadow-lg">
+        <br>
+        <h1 class="h2w">
+          Registrarse
+          <hr class="grisclaro">
+        </h1>
+        
+        <img class="rounded-circle mx-auto d-block logo m-4" src="/img/user.png" alt="Logo">
+        <div class="card-body ">
+          <form action="/users/signup" method="POST">
+            <!--Nombre-->
+            <div class="form-group">
+              <input type="text" class="form-control colorfondoform  borde8" autofocus name="nombre"
+                placeholder="&#xf007;    Nombre" value="{{nombre}}" style="font-family:Arial, FontAwesome">
+            </div>
+            <!--Apellido-->
+            <div class="form-group">
+              <input type="text" class="form-control colorfondoform  borde8 " name="apellido"
+                placeholder="&#xf007;    Apellido" value="{{apellido}}" style="font-family:Arial, FontAwesome">
+            </div>
+            <!--Calle-->
+            <div class="form-group">
+              <input type="text" class="form-control colorfondoform  borde8 " name="calle"
+                placeholder="&#xf2b9;    Calle" value="{{calle}}" style="font-family:Arial, FontAwesome">
+            </div>
+            <!--Telefono-->
+            <div class="form-group">
+              <input type="tel" pattern="[0-9]{9}" class="form-control colorfondoform  borde8" name="tlf"
+                placeholder="&#xf095;    (+36) Tlf" value="{{tlf}}" style="font-family:Arial, FontAwesome">
+            </div>
+            <!--Email-->
+            <div class="form-group shadow-lg">
+              <input type="email" class="form-control colorfondoform  borde8" name="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="&#xf007;    Email"
+                style="font-family:Arial, FontAwesome" value="{{email}}">
+            </div>
+            <!--Password-->
+            <div class="form-group shadow-lg">
+              <input type="password" class="form-control colorfondoform  borde8 naranja" name="password"
+                placeholder="&#xf007;    Contraseña" value="{{password}}" style="font-family:Arial, FontAwesome">
+            </div>
+            <!--RepPassword-->
+            <div class="form-group shadow-lg">
+              <input type="password" class="form-control colorfondoform  borde8 naranja" name="confirm_password"
+                placeholder="&#xf007;    Repetir Contraseña" value="{{confirm_password}}"
+                style="font-family:Arial, FontAwesome">
+            </div>
+            <br>
+            <button class="btn buttonn  transparent-background naranja allborders borde30">
+              Registrarse
+            </button>
+            <br> <br> <br>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  <br><br><br><br><br><br>
 </div>
