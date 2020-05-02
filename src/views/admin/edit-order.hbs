@@ -1,0 +1,88 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/each}}
+<style>
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    input[type='checkbox']:checked+label {
+        color: rgb(223, 92, 16);
+    }
+</style>
+<script>
+
+
+
+</script>
+
+<div class="container p-5">
+    <div class="col-md-6 mx-auto">
+        <div class="card   colorfondopanel bordertop">
+            <div class="card-body  shadow-lg mb-10">
+                <!--Donde enviamos los datos del formulario-->
+                <form action="/admin/edit-order/{{order._id}}?_method=PUT" method="POST">
+                    <br>
+                    <h3 class="h3w text-center">Gestionar pedido</h3>
+
+                    <hr class="grisclaro">
+                    <br>
+                    <div class="titulos"> Nombre Cliente:</div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control colorfondoform borde8"
+                            placeholder="Nombre Cliente" value={{order.name}} autofocus>
+                    </div>
+                    <div class="titulos"> Dirección de envio:</div>
+                    <div class="form-group shadow-lg">
+                        <input type="text" name="address" class="form-control colorfondoform blanco borde8"
+                            placeholder="Dirección de envio" value={{order.address}}>
+                    </div>
+                   
+                    <div class="titulos"> Productos:</div>
+                    <br>
+                    {{#each order.cart.items}}
+
+                    <div class="thumbnail3">
+                        <div class="h5w"> {{item.title}}</div>
+                        <hr class="blanco">
+                        <img class="img-responsive " src="{{item.imagePath}}" alt="..."><br>
+
+                        <div class="h5w">Descripcion: {{item.description}}</div>
+                        <br>
+
+                        <div class="h5w">Uds: {{qty}}</div>
+                        <br>
+                        <div class="h5w">Precio: {{item.price}} €</div>
+
+                        <br>
+                        <br>
+                    </div>
+                    {{/each}}
+
+                    {{#if order.tramitado}}
+                    <div class="h5w">Pedido tramitado</div>
+                    {{else}}
+                    <div class="custom-control custom-switch " style="float:left">
+                        <input class="custom-control-input" type="checkbox" name="tramitado"id="enviar" value="true">
+                        <label class="custom-control-label letras" for="enviar"> Enviar</label>
+                    </div>
+            </div>
+
+            {{/if}}
+
+            <div class="form-group">
+                <br>
+                <button class="btn buttonn transparent-background naranja allborders borde30 btn-block" type="submit">
+                    Guardar
+                </button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

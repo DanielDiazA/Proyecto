@@ -30,21 +30,38 @@
                     {{/if }}
                     <div class="titulos">Nombre: {{this.name}}</div>
                     <br>
-                    <div class="h5w">Dirección: {{this.address}}</div>
+                    <div class="titulos">Dirección: {{this.address}}</div>
                     <br>
-                    <div class="h5w">Pago: {{this.cart.totalPrice}} €</div>
+                    <div class="titulos"> Productos:</div>
                     <br>
-                    <div class="h5w">Unidades {{this.cart.totalQty}}</div>
-                    <br>
-                    <div class="h5w">Carro{{this.cart.item._id}}</div>
-                    <br><br>
-                    <b style="font-size:12px">Id del pedido: {{this.paymentId}}</b>
-                   
-                   <form action="/orders/tramitar/{{_id}}?__method=PUT" method="POST">
-                                
-                                <button type="submit" name="tramitar" value="true" class="btn  negro buttonb allbordersgris borde30 "
-                                    style="float: right;">Tramitar <i class="fas fa-trash"></i></button>
-                    </form>
+                    {{#each this.cart.items}}
+
+                    <div class="thumbnail3" style="margin-left: 30px;">
+                        <div class="h5w"> {{item.title}}</div>
+                        <hr class="blanco">
+                        <img class="img-responsive " src="{{item.imagePath}}" alt="..."><br>
+
+                        <div class="h5w"> {{item.description}}</div>
+                        <br>
+
+                        <div class="h5w">Uds: {{qty}}</div>
+                        <br>
+                        <div class="h5w">Precio: {{item.price}} €</div>
+
+                        <br>
+                        <br>
+                    </div>
+                    {{/each}}
+
+                    <div class="titulos">Pago Total: {{this.cart.totalPrice}} €</div>
+                    {{#if this.tramitado}}
+                    <div class="titulos" style="float: right; color:rgb(22, 202, 22);">Enviado</div>
+                    {{else}}
+                    <input type="hidden" name="_method">
+                    <a href="/orders/edit/{{_id}}"
+                        class="btn buttonn  transparent-background naranja allborders borde30"
+                        style="float: right;">Gestionar<i class="fas fa-cog"></i></button></a>
+                    {{/if}}
                 </li>
                 <hr>
             </ul>

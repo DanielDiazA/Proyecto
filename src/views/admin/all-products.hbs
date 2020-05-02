@@ -29,18 +29,18 @@
                             <br>
                             <div class="h5w">Descripcion: {{this.description}}</div>
                             <br>
-                            <div class="h5w">Precio: {{this.price}}</div>
+                            <div class="h5w">Precio: {{this.price}} €</div>
                             <br>
-                            <div class="h5w">Stock: {{this.cantidad}}</div>
+                            <div class="h5w">Stock: {{this.cantidad}} uds</div>
                             <br>
                             <br>
 
-                            <form action="/products/delete/{{_id}}?_method=DELETE" method="POST">
-                                <input type="hidden" name="_method" value="DELETE">
+                            
+                                <input type="hidden" name="_method">
                                 <a href="/products/edit/{{_id}}"
                                     class="btn buttonn  transparent-background naranja allborders borde30">Modificar<i
                                         class="fas fa-cog"></i></button></a>
-                            </form>
+                            
 
                             <form action="/products/delete/{{_id}}?_method=DELETE" method="POST">
                                 <input type="hidden" name="_method" value="DELETE">

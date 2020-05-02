@@ -28,9 +28,33 @@ router.delete("/users/delete/:id", isAuthenticated, async(req, res) => {
 //all orders//
 router.get("/orders", isAuthenticated, async(req, res) => {
     const orders = await Order.find().sort({ date: "desc" });
+
     res.render("admin/all-orders", { orders });
 });
 
+//edit order//
+
+router.get("/orders/edit/:id", isAuthenticated, async(req, res) => {
+    const order = await Order.findById(req.params.id);
+    res.render("admin/edit-order", { order });
+});
+
+
+
+router.put("/admin/edit-order/:id", isAuthenticated, async(req, res) => {
+    const { name, address, totalPrice, totalQty, tramitado } = req.body;
+    await Order.findByIdAndUpdate(req.params.id, {
+        name,
+        address,
+        totalPrice,
+        totalQty,
+        tramitado
+
+
+    });
+    req.flash("success_msg", "Pedido Tramitado correctamete");
+    res.redirect("/orders");
+});
 
 
 

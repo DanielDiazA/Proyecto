@@ -53,7 +53,7 @@ var products = [
         imagePath: 'https://gdurl.com/Y0jw',
         title: 'Collar NLB V1',
         description: 'Collar para perros ergonómico diseñado con el modelo NLD. Tallas de código QR S, M y L. Versión V1.',
-        price: 9.95,
+        price: 9.5,
         cantidad: 20
     }),
 
@@ -61,7 +61,7 @@ var products = [
         imagePath: 'https://gdurl.com/GKDg',
         title: 'Collar NLB V2',
         description: 'Collar para perros ergonómico diseñado con el modelo NLD. Tallas de código QR S, M y L. Versión V2.',
-        price: 9.95,
+        price: 9.5,
         cantidad: 20
     }),
 
@@ -69,7 +69,7 @@ var products = [
         imagePath: 'https://gdurl.com/p2hV',
         title: 'Collar NLB V3',
         description: 'Collar para perros ergonómico diseñado con el modelo NLD. Tallas de código QR M, L y XL. Versión V3.',
-        price: 9.95,
+        price: 9.5,
         cantidad: 20
     }),
 
@@ -77,7 +77,7 @@ var products = [
         imagePath: 'https://gdurl.com/pWHO',
         title: 'Collar NLB V4',
         description: 'Collar para perros ergonómico diseñado con el modelo NLD. Tallas de código QR M, L y XL. Versión V4.',
-        price: 9.95,
+        price: 9.5,
         cantidad: 20
     }),
 
@@ -85,7 +85,7 @@ var products = [
         imagePath: 'https://gdurl.com/3-kOc',
         title: 'Collar NLB V5',
         description: 'Collar para perros ergonómico diseñado con el modelo NLD. Tallas de código QR XS, S y M. Versión V5.',
-        price: 9.95,
+        price: 9.5,
         cantidad: 0
     })
 ];
