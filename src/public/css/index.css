@@ -77,8 +77,8 @@
     color: #fc6625;
     font-weight: 400;
     text-transform: uppercase;
+    text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
     z-index: 10;
-    opacity: .9;
 }
 
 #parallax-world-of-ugg h5 {
@@ -90,7 +90,7 @@
     font-weight: 400;
     text-transform: uppercase;
     z-index: 10;
-    opacity: .9;
+    text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
 }
 
 #parallax-world-of-ugg h6 {
@@ -190,7 +190,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    background-image: url(https://gdurl.com/dHfK);
+    background-image: url(https://gdurl.com/nQ5s);
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
