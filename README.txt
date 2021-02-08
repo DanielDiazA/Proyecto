@@ -1,9 +1,6 @@
 NeverLostDog en una aplicación web desplegada en Heroku y desarrollada mediante NodeJs y 
 MongoDB  para generar codigos QR personalizados para tus perros.
 
------------App en la nube----------
-https://neverlostdog.herokuapp.com/
-
 
 -----Aprovisionamiento(Requisitos)------
 Tener instalado mongoDB
